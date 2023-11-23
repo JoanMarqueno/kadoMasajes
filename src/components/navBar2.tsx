@@ -98,23 +98,23 @@ export default function Navbar() {
           {(ref) => (
             <div
               ref={ref}
-              className={`${isOpen ? "block" : "hidden"} md:hidden py-5`}
+              className={`${isOpen ? "block" : "hidden"} md:hidden py-5 `}
             >
-              <div className="flex flex-col md:flex-row md:mx-6 ">
+              <div className="flex flex-col md:flex-row md:mx-6">
                 {navigation.map((item) => (
                   <NavLink
                     key={item.name}
                     to={item.href}
                     className={classNames(
                       item.href === location.pathname
-                        ? "text-color-letra-nav font-bold"
-                        : "text-color-letra-nav",
+                        ? "text-bold text-color-letra-card font-semibold"
+                        : "",
                       "px-3 py-5 relative"
                     )}
                   >
-                    <span className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card">
+                    
                       {item.name}
-                    </span>
+                    
                   </NavLink>
                 ))}
               </div>
