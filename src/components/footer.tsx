@@ -12,8 +12,8 @@ export const Footer = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <img src="src\images\kado.png" width="120"></img>
-            <img src="src\images\kadoNombre.png" width="150"></img>
+            <img src="/kado.png" width="120"></img>
+            <img src="/public/kadoNombre.png" width="150"></img>
           </Link>
         </div>
         <div className="sm:col-span-1">
