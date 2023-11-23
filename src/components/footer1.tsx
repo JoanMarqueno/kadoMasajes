@@ -12,8 +12,8 @@ export const Footer1 = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <img src="..\images\kado.png" width="150"></img>
-            <img src="..\images\kadoNombre.png" width="150"></img>
+            <img src="images\kado.png" width="150"></img>
+            <img src="images\kadoNombre.png" width="150"></img>
           </Link>
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-color-letra-footer">
