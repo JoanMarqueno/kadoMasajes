@@ -62,12 +62,12 @@ export default function Navbar() {
               <div className="flex items-center">
                 <img
                   className="h-16"
-                  src="src\images\kado.png"
+                  src="../images/kado.png"
                   alt="Logo Kado"
                 />
                 <img
                   className="h-20"
-                  src="src\images\kadoNombre.png"
+                  src="..\images\kadoNombre.png"
                   alt="Logo Kado"
                 />
               </div>

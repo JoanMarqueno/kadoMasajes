@@ -12,8 +12,8 @@ export const Footer1 = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <img src="src\images\kado.png" width="150"></img>
-            <img src="src\images\kadoNombre.png" width="150"></img>
+            <img src="..\images\kado.png" width="150"></img>
+            <img src="..\images\kadoNombre.png" width="150"></img>
           </Link>
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-color-letra-footer">
@@ -55,7 +55,7 @@ export const Footer1 = () => {
           <div className="flex">
             <p className="mr-1 text-color-letra-footer">Address:</p>
             <Link
-              to="https://www.google.com/maps"
+              to="https://maps.app.goo.gl/YWXX83fKcvwuZKW4A"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Our address"
