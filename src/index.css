@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+@layer components {
+  .underline-effect span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #D8BD8F; /* Cambia esto al color que quieras para el subrayado */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .underline-effect:hover span::after {
+    transform: scaleX(1);
+  }
+}

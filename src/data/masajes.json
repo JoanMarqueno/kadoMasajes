@@ -1,0 +1,27 @@
+[
+    {
+      "titulo": "Masaje Relajante",
+      "subtitulo": "Alivia el estrés y la tensión",
+      "src": "https://khian.es/wp-content/uploads/2022/03/Terapeutico-Portada-1-800x442.jpg",
+      "descripcion": "El masaje relajante es ideal para liberar el estrés acumulado en el cuerpo. Mediante movimientos suaves y fluidos, se busca inducir la relajación y la calma, ayudando a aliviar la tensión muscular y mejorar la circulación."
+    },
+    {
+      "titulo": "Masaje Deportivo",
+      "subtitulo": "Optimiza tu rendimiento",
+      "src": "https://khian.es/wp-content/uploads/2022/03/Terapeutico-Portada-1-800x442.jpg",
+      "descripcion": "Diseñado para atletas y personas activas, el masaje deportivo ayuda a prevenir lesiones, aliviar la tensión muscular y mejorar la flexibilidad. Combina técnicas de masaje profundo y estiramientos para mantener el cuerpo en óptimas condiciones."
+    },
+    {
+      "titulo": "Masaje Piedras",
+      "subtitulo": "Equilibrio y armonía",
+      "src": "https://khian.es/wp-content/uploads/2022/03/Terapeutico-Portada-1-800x442.jpg",
+      "descripcion": "Este tipo de masaje utiliza piedras calientes para aplicar calor en puntos específicos del cuerpo. El calor ayuda a relajar los músculos y promover la circulación sanguínea, creando una sensación de equilibrio y bienestar."
+    },
+    {
+      "titulo": "Masaje Shiatsu",
+      "subtitulo": "Energía y flujo vital",
+      "src": "https://khian.es/wp-content/uploads/2022/03/Terapeutico-Portada-1-800x442.jpg",
+      "descripcion": "Originario de Japón, el masaje Shiatsu se basa en la presión aplicada en puntos clave del cuerpo para restaurar el flujo de energía vital. A través de esta técnica, se busca aliviar el estrés, mejorar la salud y promover la relajación."
+    }
+  ]
+  
