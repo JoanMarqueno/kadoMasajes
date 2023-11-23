@@ -67,7 +67,7 @@ export default function Navbar() {
                 />
                 <img
                   className="h-20"
-                  src="..\images\kadoNombre.png"
+                  src="kadoNombre.png"
                   alt="Logo Kado"
                 />
               </div>
