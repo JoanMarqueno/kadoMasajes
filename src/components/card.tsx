@@ -1,5 +1,4 @@
-
-import { MasajeData } from '../model/global'
+import { MasajeData } from "../model/global";
 
 type Props = {
   datos: MasajeData;
@@ -7,15 +6,16 @@ type Props = {
 
 export function TerapeuticMassage({ datos }: Props) {
   return (
-    <div className="xl:flex bg-color-fondo rounded-xl xl:p-0">
-      <div className="xl:w-[70%]">
-        <img
-          src={datos.src}
-          alt={datos.descripcion}
-          className="hover:grayscale h-full object-cover"
-        />
-      </div>
-      <div className=" p-3 xl:w-3/4 xl:pl-4 flex flex-col justify-between">
+    <div className="grid-cols-1 sm:grid md:grid-cols-1">
+      <div className="mx-3 mt-6 flex flex-col self-start rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-color-fondo-blanco sm:shrink-0 sm:grow sm:basis-0">
+        <a href="#!">
+          <img
+            className="hover:grayscale h-full object-cover"
+            src={datos.src}
+            alt="Hollywood Sign on The Hill"
+          />
+        </a>
+        <div className=" p-3 xl:pl-4 flex flex-col justify-between">
         <div>
           <div className="pb-4">
             <h2 className="text-3xl text-color-letra-nav">{datos.titulo}</h2>
@@ -26,10 +26,31 @@ export function TerapeuticMassage({ datos }: Props) {
           </div>
         </div>
         <div className="text-center text-clip items-center">
-          <button className="font-bold text-color-letra-nav border-2 border-color-letra-card px-12 py-2  btn btn-primary hover:bg-color-letra-card hover:text-color-fondo-blanco">
-            Más Información
-          </button>
+        <a className="" href="#">
+        <button
+          className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="button"
+        >
+          Reserva tu experiencia
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            aria-hidden="true"
+            className="h-4 w-4"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+            ></path>
+          </svg>
+        </button>
+      </a>
         </div>
+      </div>
       </div>
     </div>
   );

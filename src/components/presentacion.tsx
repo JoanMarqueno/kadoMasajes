@@ -2,7 +2,8 @@ export default function Presentacion() {
   return (
     <section className="mt-16 sm:mt-28">
       {/* Mostrar video en pantallas grandes */}
-     <video
+      <div className="hidden lg:block">
+      <video
         src="https://carontestudio.com/img/f4.mp4"
         autoPlay
         muted
@@ -10,6 +11,9 @@ export default function Presentacion() {
         poster="https://carontestudio.com/img/contacto.jpg"
         className="absolute inset-0 w-full h-[28rem] object-cover z-0 hidden lg:block"
       ></video>
+
+      </div>
+     
 
       <img
         src="https://khian.es/wp-content/uploads/2022/03/Terapeutico-Portada-1-800x442.jpg"
