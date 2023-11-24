@@ -55,32 +55,23 @@ export default function Navbar() {
             </Link>
         </div>
       </div>
-      <div className="container mx-auto p-6 pl-6 py-3 md:flex md:justify-between md:items-center">
+      <div className="container mx-auto p-6 pl-6 py-2 md:flex md:justify-between md:items-center">
         <div className="flex justify-between items-center">
           <div>
             <Link to="/" aria-label="Go home" title="Company">
-              <div className="flex items-center">
-                <img
-                  className="h-16"
-                  src="/kado.png"
-                  alt="logo Kado"
-                />
-                <img
-                  className="h-20"
-                  src="/kadoNombre.png"
-                  alt="Logo Kado"
-                />
-              </div>
+              
+               <img src="/k.png" className= "w-36 md:w-44 "alt="Logo kado" ></img>
+            
             </Link>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden pt-2">
             <button
               type="button"
-              className="hover:color-letra-nav focus:outline-none focus:color-letra-nav"
+              className="hover:color-letra-nav sifocus:outline-none focus:color-letra-nav"
               aria-label="toggle menu"
               onClick={() => setIsOpen(!isOpen)}
             >
-              <Hamburger />
+              <Hamburger  size={28}/>
             </button>
           </div>
         </div>
@@ -123,7 +114,7 @@ export default function Navbar() {
         </Transition>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex md:items-center md:justify-between py-0">
+        <div className="hidden md:flex md:items-center md:justify-between">
           <div className="flex flex-col md:flex-row md:mx-6">
             {navigation.map((item) => (
               <NavLinkDesktop key={item.name} to={item.href}>
