@@ -22,40 +22,40 @@ export const Footer = () => {
         <div className="sm:col-span-1">
           <div className="space-y-2 text-sm">
             <p className="text-base font-bold tracking-wide text-color-letra-footer">
-              Contacts
+              Contacto
             </p>
             <div className="flex">
-              <p className="mr-1 text-color-letra-footer">Phone:</p>
+             
               <Link
-                to="tel:850-123-5021"
-                aria-label="Our phone"
-                title="Our phone"
+                to="tel:+34623519832"
+                aria-label="Telefono empresa"
+                title="Contacto telefono"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
-                850-123-5021
+                +34 623 51 98 32 
               </Link>
             </div>
             <div className="flex">
-              <p className="mr-1 text-color-letra-footer">Email:</p>
+              
               <Link
-                to="mailto:info@lorem.mail"
-                aria-label="Our email"
-                title="Our email"
+                to="mailto:kadomasajes@gmail.com"
+                aria-label="Correo electronico"
+                title="Correo electronico"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
-                info@lorem.mail
+                kadomasajes@gmail.com
               </Link>
             </div>
             <div className="flex">
-              <p className="mr-1 text-color-letra-footer">Address:</p>
+             
               <Link
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                 rel="noopener noreferrer"
-                aria-label="Our address"
-                title="Our address"
+                aria-label="Dicción localización"
+                title="Dicción localización"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
-                312 Lovely Street, NY
+                Av. Ramón y Cajal, 5 1-1, Tarragona
               </Link>
             </div>
           </div>
@@ -63,7 +63,7 @@ export const Footer = () => {
 
         <div className="max-auto md:col-span-1">
           <span className="text-base font-bold tracking-wide text-color-letra-footer">
-            Social
+            Medios sociales
           </span>
           <div className="flex items-center mt-1 space-x-3">
             <Link
