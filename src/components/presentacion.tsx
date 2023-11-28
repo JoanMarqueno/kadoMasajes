@@ -2,7 +2,7 @@ export default function Presentacion() {
   return (
     <section className="w-full h-[28rem] sm:h-[32rem]">
       <img
-        src="/public/kado/portada3.jpg"
+        src="/portada3.jpg"
         alt="Descripción de la imagen"
         className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] object-cover  z-0 block"
       />
