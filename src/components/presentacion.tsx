@@ -23,13 +23,15 @@ export default function Presentacion() {
       <div className="absolute inset-0 w-full h-[28rem] bg-gradient-to-tr from-color-letra-nav to-color-fondo opacity-70"></div>
 
       <div className="mx-auto max-w-2xl lg:max-w-4xl relative z-10 flex justify-center items-center h-full">
-        <figure className="mt-36 text-center">
-          <blockquote className="text-xl leading-8 mx-2 sm:mx-0 text-color-letra-blanca sm:text-2xl sm:leading-9 max-h-50 overflow-hidden">
+        <figure className="mt-28 text-center">
+          <blockquote className="text-xl leading-8 mx-2 sm:mx-0  text-color-letra-blanca sm:text-2xl sm:leading-9 max-h-48 overflow-hidden" style={{ fontFamily: 'Montserrat' }}>
             <p>
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              expedita voluptas culpa sapiente alias molestiae. Numquam corrupti
-              in laborum sed rerum et corporis.”
+              “Kadō Masajes es un espacio único en pleno centro de Tarragona consagrado al bienestar y a la relajación”
             </p>
+            <br/>
+            <p>
+              Estás a un masaje de sentirte mejor…
+            </p>  
           </blockquote>
         </figure>
       </div>  
