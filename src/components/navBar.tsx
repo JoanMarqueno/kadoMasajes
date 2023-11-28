@@ -9,8 +9,9 @@ import IconoFacebook from "./Iconos/iconoFacebook";
 import IconoWhatsApp from "./Iconos/iconoWhatsapp";
 
 const navigation = [
-  { name: "Servicios", href: "/" },
-  { name: "¿Quiénes somos?", href: "/quienessomos" },
+  { name: "Rituales", href: "/" },
+  { name: "Tarifas", href: "/tarifas" },
+  { name: "Galeria", href: "/galeria" },
   { name: "Reservas", href: "/reserva" },
 ];
 function classNames(...classes: string[]) {

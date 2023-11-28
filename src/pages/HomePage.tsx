@@ -4,9 +4,10 @@ import { masajeInfo } from "../model/global";
 
 function HomePage() {
   return (
-    <div>
+    <div className="">
+      
       <Presentacion />
-      <div className="pt-32">
+      <div className="pt-10">
         <h1 className="text-center text-3xl text-color-letra-nav pt-2 pb-10 ">
           Tratamientos
         </h1>

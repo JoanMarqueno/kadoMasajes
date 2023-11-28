@@ -13,12 +13,12 @@ export function TerapeuticMassage({ datos }: Props) {
 
   return (
     <div className="grid-cols-1 sm:grid md:grid-cols-1">
-      <div className="mx-3 mt-6 flex flex-col self-start rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-color-fondo-blanco sm:shrink-0 sm:grow sm:basis-0">
-        <img
-          className="hover:grayscale h-full object-fill"
+      <div className="mx-3 mt-6 flex flex-col self-start rounded-lg bg-color-fondo-blanco shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-color-fondo-blanco sm:shrink-0 sm:grow sm:basis-0">
+       <img
+          className="hover:grayscale w-full h-72 object-cover "
           src={datos.src}
-          alt="Hollywood Sign on The Hill"
-        />
+          alt={datos.descripcion}
+        /> 
 
         <div className=" p-3 xl:pl-4 flex flex-col justify-between">
           <div>
