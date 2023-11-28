@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import IconoTwitter from "./Iconos/twitter";
 import IconoInsta from "./Iconos/iconoInstagram";
 import IconoFacebook from "./Iconos/iconoFacebook";
-import IconoFavicon from "./Iconos/iconoFavicon";
 
 export const Footer = () => {
   return (
