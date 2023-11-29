@@ -17,10 +17,16 @@ const navigation = [
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
+
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  function handleMenuClick() {
+ 
+    setIsOpen(!isOpen);
+  }
   return (
     <div>
       {/* Contact Bar */}
@@ -106,7 +112,7 @@ export default function Navbar() {
                 aria-label="toggle menu"
                 onClick={() => setIsOpen(!isOpen)}
               >
-                <Hamburger size={28} />
+                <Hamburger size={28} toggled={isOpen}/>
               </button>
             </div>
           </div>
@@ -137,7 +143,9 @@ export default function Navbar() {
                           : "",
                         "px-3 py-5 relative"
                       )}
+                      onClick={handleMenuClick}
                     >
+                      
                       {item.name}
                     </NavLink>
                   ))}

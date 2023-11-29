@@ -17,7 +17,7 @@ export function TerapeuticMassage({ datos }: Props) {
        <img
           className="hover:grayscale w-full h-72 object-cover "
           src={datos.src}
-          alt={datos.descripcion}
+          alt={datos.titulo}
         /> 
 
         <div className=" p-3 xl:pl-4 flex flex-col justify-between">

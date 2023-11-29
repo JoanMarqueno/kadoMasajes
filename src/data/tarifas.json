@@ -1,6 +1,6 @@
 [
     {
-      "nombre": "MASAJE CALIFORNIANO",
+      "nombre": "Masaje Californiano",
       "primerTiempo": "60min",
       "precioPrimerTiempo": "35€",
       "segundoTiempo": "90min",
@@ -9,7 +9,7 @@
       "segundoBono": "140€"
     },
     {
-      "nombre": "MASAJE RELAJANTE",
+      "nombre": "Masaje Relajante",
       "primerTiempo": "60min",
       "precioPrimerTiempo": "35€",
       "segundoTiempo": "90min",
@@ -18,7 +18,7 @@
       "segundoBono": "140€"
     },
     {
-      "nombre": "MASAJE DEPORTIVO",
+      "nombre": "Masaje Deportivo",
       "primerTiempo": "60min",
       "precioPrimerTiempo": "40€",
       "segundoTiempo": "90min",
@@ -27,7 +27,7 @@
       "segundoBono": "160€"
     },
     {
-      "nombre": "MASAJE DEEP TISSUE",
+      "nombre": "Masaje Deep Tissue",
       "primerTiempo": "60min",
       "precioPrimerTiempo": "40€",
       "segundoTiempo": "90min",
@@ -36,7 +36,7 @@
       "segundoBono": "160€"
     },
     {
-      "nombre": "MASAJE CON PIEDRAS CALIENTES",
+      "nombre": "Masaje con Piedras Calientes",
       "primerTiempo": "60min",
       "precioPrimerTiempo": "40€",
       "segundoTiempo": "90min",
@@ -45,7 +45,7 @@
       "segundoBono": "160€"
     },
     {
-      "nombre": "MASAJE FOCALIZADO",
+      "nombre": "Masaje Focalizado",
       "primerTiempo": "30min",
       "precioPrimerTiempo": "25€",
       "segundoTiempo": "45min",
@@ -54,7 +54,7 @@
       "segundoBono": "80€"
     },
     {
-      "nombre": "MASAJE FACIAL CRANEAL",
+      "nombre": "Masaje Facial y Craneal",
       "primerTiempo": "30min",
       "precioPrimerTiempo": "25€",
       "segundoTiempo": "45min",
@@ -63,7 +63,7 @@
       "segundoBono": "80€"
     },
     {
-      "nombre": "REFLEXOLOGÍA PODAL",
+      "nombre": "Reflexología Podal",
       "primerTiempo": "30min",
       "precioPrimerTiempo": "25€",
       "segundoTiempo": "45min",
