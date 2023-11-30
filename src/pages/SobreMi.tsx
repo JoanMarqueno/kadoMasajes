@@ -13,7 +13,7 @@ export default function SobreMi() {
           <h1 className="title-font sm:text-4xl text-3xl mb-2 font-medium text-color-letra-footer ">
             Ángel Martín Sánchez
           </h1>
-          <div className="border-4 border-color-letra-card sm:w-[23rem] w-96 " />
+          <div className="border-4 border-color-letra-card sm:w-[23rem] w-80" />
           <h3 className="text-color-letra-footer text-l mt-4 mb-4 text-justify font-semibold">
             Titulado en Quiromasaje y Técnico en SPA y Relax por la Escuela
             Superior de Técnicas Parasanitarias de Salamanca
