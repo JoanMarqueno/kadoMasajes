@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { MasajeData } from "../model/global";
-import { Collapse } from 'react-collapse';
+import { Collapse } from "react-collapse";
 import IconoMas from "./Iconos/iconoMas";
 import IconoMenos from "./Iconos/iconoMenos";
 
@@ -14,22 +14,21 @@ export function TerapeuticMassage({ datos }: Props) {
   return (
     <div className="grid-cols-1 sm:grid md:grid-cols-1">
       <div className="mx-3 mt-6 flex flex-col self-start rounded-lg bg-color-fondo-blanco shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-color-fondo-blanco sm:shrink-0 sm:grow sm:basis-0">
-       <img
-          className="hover:grayscale w-full h-72 object-cover "
+        <img
+          className="hover:grayscale w-full h-72 object-cover"
           src={datos.src}
           alt={datos.titulo}
-        /> 
-
+        />
         <div className=" p-3 xl:pl-4 flex flex-col justify-between">
           <div>
             <div className="pb-4 flex justify-between">
               <h2 className="text-3xl text-color-letra-nav">{datos.titulo}</h2>
               <button onClick={() => setIsExpanded(!isExpanded)}>
-                {isExpanded ? <IconoMenos/> : <IconoMas/>}
+                {isExpanded ? <IconoMenos /> : <IconoMas />}
               </button>
             </div>
             <div className="border-4  border-color-letra-card"></div>
-            
+
             <div className="py-4 h-max">
               <p className="font-medium text-color-letra-nav">
                 {datos.resumen}
@@ -39,7 +38,6 @@ export function TerapeuticMassage({ datos }: Props) {
                   {datos.descripcion}
                 </p>
               </Collapse>
-              
             </div>
           </div>
           <div className="text-center text-clip items-center">

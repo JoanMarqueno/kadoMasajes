@@ -11,8 +11,10 @@ import IconoWhatsApp from "./Iconos/iconoWhatsapp";
 const navigation = [
   { name: "Rituales", href: "/" },
   { name: "Tarifas", href: "/tarifas" },
+  { name: "Sobre mi", href: "/sobremi" },
   { name: "Galeria", href: "/galeria" },
   { name: "Reservas", href: "/reserva" },
+  
 ];
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");

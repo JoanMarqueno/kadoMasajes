@@ -5,7 +5,7 @@ import IconoFacebook from "./Iconos/iconoFacebook";
 
 export const Footer = () => {
   return (
-    <div className="bg-color-fondo font-semibold bottom-0 px-4 pt-16 mx-auto  md:px-12 lg:px-12 z-100">
+    <footer className="bg-color-fondo font-semibold bottom-0 px-4 pt-16 mx-auto  md:px-12 lg:px-12 z-100">
       <div className="flex  flex-col-reverse pt-5 pb-10 border-t lg:flex-row"></div>
       <div className="grid  md:place-items-center md:items-stretch gap-10 sm:gap-0 mb-8 sm:grid-cols-2 lg:grid-cols-3 ">
         <div className="sm:col-span-1">
@@ -90,6 +90,6 @@ export const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row"></div>
-    </div>
+    </footer>
   );
 };
