@@ -1,11 +1,15 @@
 export default function Presentacion() {
   return (
     <section className="w-full h-[28rem] sm:h-[32rem]">
-      <img
+      {/* <img
         src="/portada3.jpg"
         alt="Descripción de la imagen"
         className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] object-cover  z-0 block"
-      />
+      /> */}
+      <video className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] object-cover  z-0 block" width="500" autoPlay loop muted>
+            <source src="https://carontestudio.com/img/f4.mp4" type="video/mp4"/>
+          
+        </video>
       <div className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] bg-gradient-to-tr from-color-letra-nav to-color-letra-card opacity-60"></div>
 
       <div className="mx-auto max-w-2xl lg:max-w-4xl relative flex justify-center items-center h-full">
