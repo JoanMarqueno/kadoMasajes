@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import IconoTwitter from "./Iconos/twitter";
 import IconoInsta from "./Iconos/iconoInstagram";
 import IconoFacebook from "./Iconos/iconoFacebook";
+import ScrollLink from "./scrollLink";
+import IconoTelegram from "./Iconos/iconoTelegram";
 
 export const Footer = () => {
   return (
@@ -9,7 +10,7 @@ export const Footer = () => {
       <div className="flex  flex-col-reverse pt-5 pb-10 border-t lg:flex-row"></div>
       <div className="grid  md:place-items-center md:items-stretch gap-10 sm:gap-0 mb-8 sm:grid-cols-2 lg:grid-cols-3 ">
         <div className="sm:col-span-1">
-          <Link
+          <ScrollLink
             to="/"
             aria-label="Go home"
             title="Company"
@@ -17,7 +18,7 @@ export const Footer = () => {
           >
             <img src="/k.png" width="300"></img>
             
-          </Link>
+          </ScrollLink>
         </div>
         <div className="sm:col-span-1">
           <div className="space-y-2 text-sm">
@@ -28,6 +29,7 @@ export const Footer = () => {
              
               <Link
                 to="tel:+34623519832"
+                target="_blank"
                 aria-label="Telefono empresa"
                 title="Contacto telefono"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
@@ -39,6 +41,7 @@ export const Footer = () => {
               
               <Link
                 to="mailto:kadomasajes@gmail.com"
+                target="_blank"
                 aria-label="Correo electronico"
                 title="Correo electronico"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
@@ -51,6 +54,7 @@ export const Footer = () => {
               <Link
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                 rel="noopener noreferrer"
+                target="_blank"
                 aria-label="Dicción localización"
                 title="Dicción localización"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
@@ -66,26 +70,29 @@ export const Footer = () => {
             Medios sociales
           </span>
           <div className="flex items-center mt-1 space-x-3">
-            <Link
-              to="/"
+            <ScrollLink
+              to="https://t.me/kadomasajes"
+              target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
-              <IconoTwitter />
-            </Link>
+              <IconoTelegram />
+            </ScrollLink>
 
-            <Link
-              to="/"
+            <ScrollLink
+              to="https://www.instagram.com/kadomasajes/"
+              target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
               <IconoInsta/>
-            </Link>
+            </ScrollLink>
 
-            <Link
+            <ScrollLink
               to="/"
+              target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
               <IconoFacebook/>
-            </Link>
+            </ScrollLink>
           </div>
         </div>
       </div>

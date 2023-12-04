@@ -1,4 +1,5 @@
 import { MassagePrice } from "../model/global";
+import ScrollLink from "./scrollLink";
 
 type Props = {
   tarifa: MassagePrice;
@@ -25,6 +26,7 @@ export default function CardTarifa2({ tarifa }: Props) {
               <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-letra-card leading-none">
                 {tarifa.precioPrimerTiempo}
               </h3>
+              <ScrollLink to="/reserva">
               <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
                 {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
                 <svg
@@ -39,6 +41,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </button>
+              </ScrollLink>
             </div>
           </div>
           <div className="p-4 xl:w-1/4 w-1/2">
@@ -49,6 +52,7 @@ export default function CardTarifa2({ tarifa }: Props) {
               <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-letra-card leading-none">
                 {tarifa.precioSegundoTiempo}
               </h3>
+              <ScrollLink to="/reserva">
               <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
                 {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
                 <svg
@@ -63,6 +67,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </button>
+              </ScrollLink>
             </div>
           </div>
           <div className="p-4 xl:w-1/4 w-1/2">
@@ -74,6 +79,7 @@ export default function CardTarifa2({ tarifa }: Props) {
               <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-letra-card leading-none">
                 {tarifa.primerBono}
               </h3>
+              <ScrollLink to="/reserva">
               <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
                 {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
                 <svg
@@ -88,6 +94,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </button>
+              </ScrollLink>
             </div>
           </div>
           <div className="p-4 xl:w-1/4 w-1/2">
@@ -99,6 +106,7 @@ export default function CardTarifa2({ tarifa }: Props) {
               <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-letra-card leading-none">
                 {tarifa.segundoBono}
               </h3>
+              <ScrollLink to="/reserva">
               <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
                 {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
                 <svg
@@ -113,6 +121,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </button>
+              </ScrollLink>
             </div>
           </div>
           

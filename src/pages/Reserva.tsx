@@ -21,6 +21,7 @@ export default function Reserva() {
                 </h3>
                 <Link
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Dicción localización"
                 title="Dicción localización"
@@ -35,6 +36,7 @@ export default function Reserva() {
                 </h3>
                 <Link
                 to="mailto:kadomasajes@gmail.com"
+                target="_blank"
                 aria-label="Correo electronico"
                 title="Correo electronico"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
@@ -46,6 +48,7 @@ export default function Reserva() {
             </h3>
                 <Link
                 to="tel:+34623519832"
+                target="_blank"
                 aria-label="Telefono empresa"
                 title="Contacto telefono"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"

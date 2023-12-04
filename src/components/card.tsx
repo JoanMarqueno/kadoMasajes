@@ -3,6 +3,7 @@ import { MasajeData } from "../model/global";
 import { Collapse } from "react-collapse";
 import IconoMas from "./Iconos/iconoMas";
 import IconoMenos from "./Iconos/iconoMenos";
+import ScrollLink from "./scrollLink";
 
 type Props = {
   datos: MasajeData;
@@ -10,6 +11,19 @@ type Props = {
 
 export function TerapeuticMassage({ datos }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const truncateString = (str: string, num: number) => {
+    if (isExpanded) {
+      return <p className="font-medium text-color-letra-nav">{str}</p>;
+    } else {
+      return (
+        <p className="font-medium text-color-letra-nav">
+          {str.slice(0, num)}
+          {str.length > num && "..."}
+        </p>
+      );
+    }
+  };
 
   return (
     <div className="grid-cols-1 sm:grid md:grid-cols-1">
@@ -30,18 +44,16 @@ export function TerapeuticMassage({ datos }: Props) {
             <div className="border-4  border-color-letra-card"></div>
 
             <div className="py-4 h-max">
-              <p className="font-medium text-color-letra-nav">
-                {datos.resumen}
-              </p>
+              {truncateString(datos.descripcion, 400)}
               <Collapse isOpened={isExpanded}>
-                <p className="font-medium text-color-letra-nav">
+                <p className="font-medium text-color-letra-nav text-justify whitespace-break-spaces">
                   {datos.descripcion}
                 </p>
               </Collapse>
             </div>
           </div>
           <div className="text-center text-clip items-center">
-            <a className="" href="#">
+            <ScrollLink  to="/reserva">
               <button
                 className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
@@ -63,7 +75,7 @@ export function TerapeuticMassage({ datos }: Props) {
                   ></path>
                 </svg>
               </button>
-            </a>
+            </ScrollLink>
           </div>
         </div>
       </div>
