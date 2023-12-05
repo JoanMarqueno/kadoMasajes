@@ -104,7 +104,7 @@ export default function Navbar() {
                 aria-label="toggle menu"
                 onClick={() => setIsOpen(!isOpen)}
               >
-                <Hamburger size={28} toggled={isOpen} />
+                <Hamburger arial-label="Icono Menú" size={28} toggled={isOpen} />
               </button>
             </div>
           </div>

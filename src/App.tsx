@@ -23,7 +23,7 @@ function App() {
         <Route path='/sobremi' element={<SobreMi/>} />
         <Route path='/galeria' element={<GaleriaPage/>} />
         <Route path='/reserva' element={<Reserva/>} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path="/*" element={<NotFound/>} />
       </Routes>
       <Footer />
     </Router>
