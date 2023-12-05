@@ -51,7 +51,7 @@ export const Footer = () => {
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                 rel="noopener noreferrer"
                 target="_blank"
-                aria-label="Dicción localización"
+                aria-label="Dicción localización Av. Ramón y Cajal, 5 1-1, Tarragona"
                 title="Dicción localización"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
