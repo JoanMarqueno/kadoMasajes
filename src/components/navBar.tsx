@@ -32,9 +32,9 @@ export default function Navbar() {
 
       <nav className="bg-color-fondo-blanco shadow fixed w-full top-0 z-50 text-color-letra-nav font-medium">
         <div className="bg-color-letra-card p-2 justify-between pr-20 items-center space-x-6 hidden md:flex">
-          <div className="pl-20 flex space-x-8">
-            <ScrollLink
-              to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+          <address className="pl-20 flex space-x-8">
+            <a
+              href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
               target="_blank"
               rel="non style"
               aria-label="Direccion Kado Masajes"
@@ -42,46 +42,53 @@ export default function Navbar() {
               className="transition-colors duration-300 text-color-letra-footer text-center  hover:text-color-letra-blanca font-medium"
             >
               Av. Ramón y Cajal, Tarragona
-            </ScrollLink>
+            </a>
             <div className="flex items-center space-x-2">
-              <ScrollLink
-                to="tel:+34623519832"
+              <a
+                rel="noopener noreferrer"
+                href="tel:+34623519832"
                 target="_blank"
                 aria-label="Telefono empresa"
                 title="Contacto telefono"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
               >
                 <p>+34 623 51 98 32</p>
-              </ScrollLink>
+              </a>
             </div>
-          </div>
+          </address>
           <div className="flex space-x-6 items-center">
             <div>
-              <ScrollLink
-                to="https://t.me/kadomasajes"
+              <a
+                title="Enlace a nuestro Telegram"
+                rel="noopener noreferrer"
+                href="https://t.me/kadomasajes"
                 target="_blank"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
               >
                 <IconoTelegram />
-              </ScrollLink>
+              </a>
             </div>
             <div>
-              <ScrollLink
-                to="https://www.instagram.com/kadomasajes/"
+              <a
+                title="Enlace a nuestro Instagram"
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/kadomasajes/"
                 target="_blank"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
               >
                 <IconoInsta />
-              </ScrollLink>
+              </a>
             </div>
             <div>
-              <ScrollLink
-                to="https://wa.me/34623519832"
+              <a
+                title="Enlace a nuestro WhatsApp"
+                rel="noopener noreferrer"
+                href="https://wa.me/34623519832"
                 target="_blank"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
               >
                 <IconoWhatsApp />
-              </ScrollLink>
+              </a>
             </div>
           </div>
         </div>
@@ -89,11 +96,15 @@ export default function Navbar() {
         <div className="container mx-auto p-6 pl-6 py-2 md:flex md:justify-between md:items-center">
           <div className="flex justify-between items-center">
             <div>
-              <ScrollLink to="/" aria-label="Go home" title="Company">
+              <ScrollLink
+                to="/"
+                aria-label="Ir a página de rituales"
+                title="Acceso a página de rituales"
+              >
                 <img
                   src="/k.png"
                   className="w-36 md:w-44 "
-                  alt="Logo kado"
+                  alt="Logo de Kado Masajes"
                 ></img>
               </ScrollLink>
             </div>
@@ -104,7 +115,11 @@ export default function Navbar() {
                 aria-label="toggle menu"
                 onClick={() => setIsOpen(!isOpen)}
               >
-                <Hamburger arial-label="Icono Menú" size={28} toggled={isOpen} />
+                <Hamburger
+                  arial-label="Icono Menú"
+                  size={28}
+                  toggled={isOpen}
+                />
               </button>
             </div>
           </div>
@@ -141,31 +156,37 @@ export default function Navbar() {
                     </NavLink>
                   ))}
                   <div className="flex flex-col-reverse justify-between  py-4 border-t lg:flex-row"></div>
-                  <div className="flex justify-around items-center">
-                    <ScrollLink
-                      to="https://t.me/kadomasajes"
+                  <address className="flex justify-around items-center">
+                    <a
+                      title="Enlace a nuestro Telegram"
+                      rel="noopener noreferrer"
+                      href="https://t.me/kadomasajes"
                       target="_blank"
                       className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                     >
                       <IconoTelegram />
-                    </ScrollLink>
+                    </a>
 
-                    <ScrollLink
-                      to="https://www.instagram.com/kadomasajes/"
+                    <a
+                      title="Enlace a nuestro Instagram"
+                      rel="noopener noreferrer"
+                      href="https://www.instagram.com/kadomasajes/"
                       target="_blank"
                       className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                     >
                       <IconoInsta />
-                    </ScrollLink>
+                    </a>
 
-                    <ScrollLink
-                      to="https://wa.me/34623519832"
+                    <a
+                      title="Enlace a nuestro WhatsApp"
+                      rel="noopener noreferrer"
+                      href="https://wa.me/34623519832"
                       target="_blank"
                       className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                     >
                       <IconoWhatsApp />
-                    </ScrollLink>
-                  </div>
+                    </a>
+                  </address>
                 </div>
               </div>
             )}

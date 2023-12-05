@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import IconoInsta from "./Iconos/iconoInstagram";
-import IconoFacebook from "./Iconos/iconoFacebook";
 import ScrollLink from "./scrollLink";
 import IconoTelegram from "./Iconos/iconoTelegram";
+import IconoWhatsApp from "./Iconos/iconoWhatsapp";
 
 export const Footer = () => {
   return (
@@ -12,12 +12,11 @@ export const Footer = () => {
         <div className="sm:col-span-1">
           <ScrollLink
             to="/"
-            aria-label="Go home"
-            title="Company"
+            aria-label="Ir a pagina rituales"
+            title="Logo compañía"
             className="inline-flex items-center"
           >
-            <img alt="Compañia nombre" src="/k.png" width="300"></img>
-            
+            <img alt="Logo de Kado Masajes" src="/k.png" width="300"></img>
           </ScrollLink>
         </div>
         <div className="sm:col-span-1">
@@ -26,23 +25,21 @@ export const Footer = () => {
               Contacto
             </p>
             <div className="flex">
-             
               <Link
                 to="tel:+34623519832"
                 target="_blank"
-                aria-label="Telefono empresa"
+                aria-label="Llámanos: +34 623 51 98 32"
                 title="Contacto telefono"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
-                +34 623 51 98 32 
+                +34 623 51 98 32
               </Link>
             </div>
             <div className="flex">
-              
               <Link
                 to="mailto:kadomasajes@gmail.com"
                 target="_blank"
-                aria-label="Correo electronico"
+                aria-label="Envíanos un correo electrónico: kadomasajes@gmail.com"
                 title="Correo electronico"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
@@ -50,7 +47,6 @@ export const Footer = () => {
               </Link>
             </div>
             <div className="flex">
-             
               <Link
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                 rel="noopener noreferrer"
@@ -70,29 +66,35 @@ export const Footer = () => {
             Medios sociales
           </span>
           <div className="flex items-center mt-1 space-x-3">
-            <ScrollLink
-              to="https://t.me/kadomasajes"
+            <a
+              title="Enlace a nuestro Telegram"
+              aria-label="Enlace a nuestro Telegram"
+              href="https://t.me/kadomasajes"
               target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
               <IconoTelegram />
-            </ScrollLink>
+            </a>
 
-            <ScrollLink
-              to="https://www.instagram.com/kadomasajes/"
+            <a
+              title="Enlace a nuestro Instagram"
+              aria-label="Enlace a nuestro Instagram"
+              href="https://www.instagram.com/kadomasajes/"
               target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
-              <IconoInsta/>
-            </ScrollLink>
+              <IconoInsta />
+            </a>
 
-            <ScrollLink
-              to="/"
+            <a
+              title="Enlace a nuestro WhatsApp"
+              aria-label="Enlace a nuestro WhatsApp"
+              href="https://wa.me/34623519832"
               target="_blank"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
             >
-              <IconoFacebook/>
-            </ScrollLink>
+              <IconoWhatsApp />
+            </a>
           </div>
         </div>
       </div>
