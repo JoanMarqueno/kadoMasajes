@@ -1,0 +1,8 @@
+{
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/src/main.tsx", "dest": "/index.html" },
+      { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
+  
