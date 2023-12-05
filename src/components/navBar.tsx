@@ -4,7 +4,6 @@ import Hamburger from "hamburger-react";
 import { Transition } from "@headlessui/react";
 import { NavLinkDesktop } from "./navLink";
 import IconoInsta from "./Iconos/iconoInstagram";
-import IconoFacebook from "./Iconos/iconoFacebook";
 import IconoWhatsApp from "./Iconos/iconoWhatsapp";
 import IconoTelegram from "./Iconos/iconoTelegram";
 import ScrollLink from "./scrollLink";
@@ -46,14 +45,6 @@ export default function Navbar() {
             </ScrollLink>
             <div className="flex items-center space-x-2">
               <ScrollLink
-
-                to="https://wa.me/34623519832"
-                target="_blank"
-                className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
-              >
-                <IconoWhatsApp />
-              </ScrollLink>
-              <ScrollLink
                 to="tel:+34623519832"
                 target="_blank"
                 aria-label="Telefono empresa"
@@ -67,7 +58,6 @@ export default function Navbar() {
           <div className="flex space-x-6 items-center">
             <div>
               <ScrollLink
-
                 to="https://t.me/kadomasajes"
                 target="_blank"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
@@ -86,11 +76,11 @@ export default function Navbar() {
             </div>
             <div>
               <ScrollLink
-                to="/"
+                to="https://wa.me/34623519832"
                 target="_blank"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
               >
-                <IconoFacebook />
+                <IconoWhatsApp />
               </ScrollLink>
             </div>
           </div>
@@ -169,17 +159,9 @@ export default function Navbar() {
                     </ScrollLink>
 
                     <ScrollLink
-                      to="/"
-                      target="_blank"
-                      className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
-                    >
-                      <IconoFacebook />
-                    </ScrollLink>
-
-                    <ScrollLink
                       to="https://wa.me/34623519832"
                       target="_blank"
-                      className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
+                      className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                     >
                       <IconoWhatsApp />
                     </ScrollLink>
