@@ -16,7 +16,7 @@ export const Footer = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <img src="/k.png" width="300"></img>
+            <img alt="Compañia nombre" src="/k.png" width="300"></img>
             
           </ScrollLink>
         </div>

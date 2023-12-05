@@ -5,7 +5,7 @@ export default function SobreMi() {
         <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
           <img
             className="object-fill rounded"
-            alt="sobre mi"
+            alt="Imagen de Angel el masajista"
             src="/sobremi.jpg"
           />
         </div>

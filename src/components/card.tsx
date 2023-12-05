@@ -37,7 +37,7 @@ export function TerapeuticMassage({ datos }: Props) {
           <div>
             <div className="pb-4 flex justify-between">
               <h2 className="text-3xl text-color-letra-nav">{datos.titulo}</h2>
-              <button onClick={() => setIsExpanded(!isExpanded)}>
+              <button id={datos.titulo} onClick={() => setIsExpanded(!isExpanded)}>
                 {isExpanded ? <IconoMenos /> : <IconoMas />}
               </button>
             </div>
@@ -55,6 +55,7 @@ export function TerapeuticMassage({ datos }: Props) {
           <div className="text-center text-clip items-center">
             <ScrollLink  to="/reserva">
               <button
+                id={datos.src}
                 className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
               >

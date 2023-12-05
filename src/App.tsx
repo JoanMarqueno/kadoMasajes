@@ -7,6 +7,7 @@ import TarifasPage from './pages/TarifasPage';
 import GaleriaPage from './pages/GaleriaPage';
 import Reserva from './pages/Reserva';
 import SobreMi from './pages/SobreMi';
+import NotFound from './pages/NotFound';
 
 
 
@@ -16,13 +17,13 @@ function App() {
     <Router>
       
       <Navbar/>
-  
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path='/tarifas' element={<TarifasPage/>} />
         <Route path='/sobremi' element={<SobreMi/>} />
         <Route path='/galeria' element={<GaleriaPage/>} />
         <Route path='/reserva' element={<Reserva/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
       <Footer />
     </Router>
