@@ -41,7 +41,7 @@ export function TerapeuticMassage({ datos }: Props) {
                 {isExpanded ? <IconoMenos /> : <IconoMas />}
               </button>
             </div>
-            <div className="border-4  border-color-letra-card"></div>
+            <div className="border-4  border-color-fondo-marron"></div>
 
             <div className="py-4 h-max">
               {truncateString(datos.descripcion, 400)}
@@ -56,7 +56,7 @@ export function TerapeuticMassage({ datos }: Props) {
             <ScrollLink  to="/reserva">
               <button
                 id={datos.src}
-                className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card  hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
               >
                 Reserva tu experiencia

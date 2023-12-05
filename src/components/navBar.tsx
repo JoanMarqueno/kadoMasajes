@@ -31,7 +31,7 @@ export default function Navbar() {
       {/* Contact Bar */}
 
       <nav className="bg-color-fondo-blanco shadow fixed w-full top-0 z-50 text-color-letra-nav font-medium">
-        <div className="bg-color-letra-card p-2 justify-between pr-20 items-center space-x-6 hidden md:flex">
+        <div className="bg-color-fondo-marron p-2 justify-between pr-20 items-center space-x-6 hidden md:flex">
           <address className="pl-20 flex space-x-8">
             <a
               href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"

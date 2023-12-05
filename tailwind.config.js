@@ -14,7 +14,8 @@ export default {
         'color-fondo-blanco': '#FFFFFF',
         'color-letra-nav': '#636363',
         'color-letra-footer': '#636363',
-        'color-letra-card': '#D8BD8F',
+        'color-letra-card': '#B39C6D',
+        'color-fondo-marron': '#D8BD8F',
         'color-letra-blanca': '#FFFFFF',
       },
       borderStyle: ['hover']
