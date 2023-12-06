@@ -20,7 +20,7 @@ export const Footer = () => {
           </ScrollLink>
         </div>
         <div className="sm:col-span-1">
-          <div className="space-y-2 text-sm">
+          <div className="space-y-2 text-base">
             <p className="text-base font-bold tracking-wide text-color-letra-footer">
               Contacto
             </p>

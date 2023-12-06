@@ -21,7 +21,7 @@ export default function SobreMi() {
           <h3 className="text-color-letra-footer text-l mb-4 text-justify font-semibold">
             Especializado en Masaje Californiano en la Escuela de Masaje
             Californiano de Barcelona Terapeuta Reiki niveles I y II
-          </h3>
+          </h3>å
           <p className="mb-8 leading-normal text-justify">
             Amplia experiencia como terapeuta en los SPAs de los mejores hoteles
             de Barcelona y Tarragona. Gracias a mi formación y experiencia he
