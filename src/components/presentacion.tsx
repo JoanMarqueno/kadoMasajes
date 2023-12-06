@@ -2,7 +2,7 @@ export default function Presentacion() {
   return (
     <section className="w-full h-[28rem] sm:h-[32rem]">
       <img
-        src="/portada3.jpg"
+        src="/portada3.webp"
         alt="Imagen de la sala con una camilla y unas flores"
         className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] object-cover  z-0 block"
       /> 

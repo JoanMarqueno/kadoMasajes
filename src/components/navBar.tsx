@@ -102,7 +102,7 @@ export default function Navbar() {
                 title="Acceso a página de rituales"
               >
                 <img
-                  src="/k.png"
+                  src="/k.webp"
                   className="w-36 md:w-44 "
                   alt="Logo de Kado Masajes"
                 ></img>

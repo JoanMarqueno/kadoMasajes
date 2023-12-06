@@ -16,7 +16,7 @@ export const Footer = () => {
             title="Logo compañía"
             className="inline-flex items-center"
           >
-            <img alt="Logo de Kado Masajes" src="/k.png" width="300"></img>
+            <img alt="Logo de Kado Masajes" src="/k.webp" width="300"></img>
           </ScrollLink>
         </div>
         <div className="sm:col-span-1">
