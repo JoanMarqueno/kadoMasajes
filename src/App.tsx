@@ -8,6 +8,7 @@ import GaleriaPage from './pages/GaleriaPage';
 import Reserva from './pages/Reserva';
 import SobreMi from './pages/SobreMi';
 import NotFound from './pages/NotFound';
+import Rituales from './pages/Rituales';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
+        <Route path='/rituales' element={<Rituales/>} />
         <Route path='/tarifas' element={<TarifasPage/>} />
         <Route path='/sobremi' element={<SobreMi/>} />
         <Route path='/galeria' element={<GaleriaPage/>} />

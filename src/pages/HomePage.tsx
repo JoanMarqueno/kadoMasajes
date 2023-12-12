@@ -6,7 +6,10 @@ function HomePage() {
   return (
     <div className="">
       
-      <Presentacion />
+      <Presentacion datos={{
+        titulo: "Kadō Masajes es un espacio único en pleno centro de Tarragona consagrado al bienestar y a la relajación.",
+        texto: "Estás a un masaje de sentirte mejor…"
+      }} urlFoto="/portada3.webp" />
       <div className="pt-10">
         <h1 className="text-center text-3xl text-color-letra-nav pt-2 pb-10 ">
           Tratamientos

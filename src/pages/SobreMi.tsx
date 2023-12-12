@@ -25,7 +25,7 @@ export default function SobreMi() {
           <p className="mb-8 leading-normal text-justify">
             Amplia experiencia como terapeuta en los SPAs de los mejores hoteles
             de Barcelona y Tarragona. Gracias a mi formación y experiencia he
-            conseguido crear una una terapia basada en una perspectiva holística
+            conseguido crear una terapia basada en una perspectiva holística
             del cuerpo, teniendo en cuenta nuestra parte física, energética y
             espiritual. De este modo la experiencia se convierte en un verdadero
             momento de conexión con nuestro interior para sanar desde dentro

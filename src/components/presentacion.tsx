@@ -1,8 +1,20 @@
-export default function Presentacion() {
+
+
+
+interface Props {
+  datos: {
+    titulo: string;
+    texto: string;
+  };
+  urlFoto: string;
+}
+
+
+export default function Presentacion({ datos, urlFoto }: Props) {
   return (
     <section className="w-full h-[28rem] sm:h-[32rem]">
       <img
-        src="/portada3.webp"
+        src={urlFoto}
         alt="Imagen de la sala con una camilla y unas flores"
         className="absolute inset-0 w-full h-[28rem] sm:h-[32rem] object-cover  z-0 block"
       /> 
@@ -15,9 +27,9 @@ export default function Presentacion() {
             className="text-xl leading-8 mx-2 sm:mx-0  text-color-letra-blanca sm:text-2xl sm:leading-9 overflow-hidden"
             style={{ fontFamily: 'Montserrat' }}
           >
-            <p>“Kadō Masajes es un espacio único en pleno centro de Tarragona consagrado al bienestar y a la relajación”</p>
+            <p>{datos.titulo}</p>
             <br />
-            <p>Estás a un masaje de sentirte mejor…</p>
+            <p>{datos.texto}</p>
           </blockquote>
         </figure>
       </div>

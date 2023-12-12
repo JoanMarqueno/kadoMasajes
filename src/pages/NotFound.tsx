@@ -8,7 +8,7 @@ export default function NotFound() {
           <div className="max-w-md ">
             <div className="text-5xl font-dark font-bold pb-5">404</div>
             <p className="text-2xl md:text-3xl font-light leading-normal pb-5">
-              Lo siento, no podemos encontrar la pagina que está buscando{" "}
+              Lo siento, no podemos encontrar la pagina que está buscando
             </p>
             <ScrollLink to="/">
             <button

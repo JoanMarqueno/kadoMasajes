@@ -8,21 +8,21 @@ export default function GaleriaFotos() {
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/500x300"
+                src="/californiano.webp"
               />
             </div>
             <div className="md:p-2 p-1 sm:w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/501x301"
+                src="/piedras.webp"
               />
             </div>
             <div className="md:p-2 p-1 w-full">
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/600x360"
+                src="/deportivo.webp"
               />
             </div>
           </div>
@@ -31,21 +31,21 @@ export default function GaleriaFotos() {
               <img
                 alt="gallery"
                 className="w-full h-full object-cover object-center block"
-                src="https://dummyimage.com/601x361"
+                src="/deeptissue.webp"
               />
             </div>
             <div className="md:p-2 p-1 sm:w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/502x302"
+                src="/craneofacial.webp"
               />
             </div>
             <div className="md:p-2 p-1 sm:w-1/2">
               <img
                 alt="gallery"
                 className="w-full object-cover h-full object-center block"
-                src="https://dummyimage.com/503x303"
+                src="/focalizado.webp"
               />
             </div>
           </div>

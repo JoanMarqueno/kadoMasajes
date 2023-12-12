@@ -9,9 +9,10 @@ import IconoTelegram from "./Iconos/iconoTelegram";
 import ScrollLink from "./scrollLink";
 
 const navigation = [
-  { name: "Rituales", href: "/" },
+  { name: "Tratamientos", href: "/" },
+  { name: "Rituales", href: "/rituales" },
   { name: "Tarifas", href: "/tarifas" },
-  { name: "Sobre mi", href: "/sobremi" },
+  { name: "Sobre mí", href: "/sobremi" },
   { name: "Galería", href: "/galeria" },
   { name: "Reservas", href: "/reserva" },
 ];
@@ -31,7 +32,7 @@ export default function Navbar() {
       {/* Contact Bar */}
 
       <nav className="bg-color-fondo-blanco shadow fixed w-full top-0 z-50 text-color-letra-nav font-medium">
-        <div className="bg-color-fondo-marron p-2 justify-between pr-20 items-center space-x-6 hidden md:flex">
+        <div className="bg-color-fondo-marron p-2 justify-between pr-20 items-center space-x-6 hidden lg:flex">
           <address className="pl-20 flex space-x-8">
             <a
               href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
@@ -93,7 +94,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="container mx-auto p-6 pl-6 py-2 md:flex md:justify-between md:items-center">
+        <div className="container mx-auto p-6 pl-6 py-2 lg:flex lg:justify-between lg:items-center">
           <div className="flex justify-between items-center">
             <div>
               <ScrollLink
@@ -103,12 +104,12 @@ export default function Navbar() {
               >
                 <img
                   src="/k.webp"
-                  className="w-36 md:w-44 "
+                  className="w-36 lg:w-44 "
                   alt="Logo de Kado Masajes"
                 ></img>
               </ScrollLink>
             </div>
-            <div className="md:hidden pt-2">
+            <div className="lg:hidden pt-2">
               <button
                 type="button"
                 className="hover:color-letra-nav sifocus:outline-none focus:color-letra-nav"
@@ -137,9 +138,9 @@ export default function Navbar() {
             {(ref) => (
               <div
                 ref={ref}
-                className={`${isOpen ? "block" : "hidden"} md:hidden py-5 `}
+                className={`${isOpen ? "block" : "hidden"} lg:hidden py-5 `}
               >
-                <div className="flex flex-col md:flex-row md:mx-6">
+                <div className="flex flex-col lg:flex-row lg:mx-6">
                   {navigation.map((item) => (
                     <NavLink
                       key={item.name}
@@ -193,8 +194,8 @@ export default function Navbar() {
           </Transition>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:items-center md:justify-between">
-            <div className="flex flex-col md:flex-row md:mx-6">
+          <div className="hidden lg:flex lg:items-center lg:justify-between">
+            <div className="flex flex-col lg:flex-row lg:mx-6">
               {navigation.map((item) => (
                 <NavLinkDesktop key={item.name} to={item.href}>
                   {item.name}
