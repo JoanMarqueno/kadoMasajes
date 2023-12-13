@@ -13,7 +13,7 @@ const navigation = [
   { name: "Rituales", href: "/rituales" },
   { name: "Tarifas", href: "/tarifas" },
   { name: "Sobre mí", href: "/sobremi" },
-  { name: "Galería", href: "/galeria" },
+  //{ name: "Galería", href: "/galeria" },
   { name: "Reservas", href: "/reserva" },
 ];
 function classNames(...classes: string[]) {
