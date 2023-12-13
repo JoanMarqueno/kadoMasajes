@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import { Transition } from "@headlessui/react";
 import { NavLinkDesktop } from "./navLink";
@@ -142,7 +142,7 @@ export default function Navbar() {
               >
                 <div className="flex flex-col lg:flex-row lg:mx-6">
                   {navigation.map((item) => (
-                    <NavLink
+                    <ScrollLink
                       key={item.name}
                       to={item.href}
                       className={classNames(
@@ -154,7 +154,7 @@ export default function Navbar() {
                       onClick={handleMenuClick}
                     >
                       {item.name}
-                    </NavLink>
+                    </ScrollLink>
                   ))}
                   <div className="flex flex-col-reverse justify-between  py-4 border-t lg:flex-row"></div>
                   <address className="flex justify-around items-center">
