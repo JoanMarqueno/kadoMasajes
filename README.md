@@ -1,58 +1,48 @@
- README
+# Kado Masajes
 
-Este es el archivo README para el proyecto "kadomasajes".
+Este es el repositorio del sitio web oficial de Kado Masajes.
 
 ## Descripción
 
-Este proyecto es una aplicación de React para el sitio web de Kado Masajes. Contiene diferentes dependencias y scripts para el desarrollo y construcción del proyecto.
+El sitio web de Kado Masajes ha sido creado para promover y brindar información sobre los servicios de masajes ofrecidos por el negocio. La aplicación utiliza tecnologías modernas como [Vite](https://vitejs.dev/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/), y otras bibliotecas populares.
+
+## URL del Sitio Web
+
+El sitio web está disponible en [www.kadomasajes.com](https://www.kadomasajes.com).
+
+## Scripts
+
+- `dev`: Inicia el servidor de desarrollo de Vite.
+- `build`: Compila el proyecto para producción.
+- `lint`: Ejecuta ESLint para el linting del código.
+- `preview`: Inicia el servidor de vista previa de Vite.
+
+## Dependencias
+
+- [@emotion/react](https://emotion.sh/docs/introduction): Biblioteca de estilo para React.
+- [@headlessui/react](https://headlessui.dev/react): Componentes de interfaz de usuario accesibles.
+- [@mui/icons-material](https://mui.com/getting-started/installation/): Iconos de Material-UI.
+- [Hamburger-react](https://hamburger-react.netlify.app/): Componente de hamburguesa animada.
+- [React Icons](https://react-icons.github.io/react-icons/): Iconos de React.
+- [React Router DOM](https://reactrouter.com/): Para manejar la navegación en React.
+- [React Spring](https://react-spring.io/): Biblioteca de animaciones para React.
+
+## Dependencias de Desarrollo
+
+- [@types/react](https://www.npmjs.com/package/@types/react) y otros: Tipados para React y otras bibliotecas.
+- [@typescript-eslint/eslint-plugin](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin) y [@typescript-eslint/parser](https://www.npmjs.com/package/@typescript-eslint/parser): ESLint para TypeScript.
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite/tree/main/packages/plugin-react-swc): Plugin de Vite para React.
+- [Autoprefixer](https://autoprefixer.github.io/): Plugin de PostCSS para agregar prefijos de navegador automáticamente.
+- [ESLint](https://eslint.org/): Herramienta de linting para JavaScript y TypeScript.
+- [PostCSS](https://postcss.org/): Herramienta de procesamiento de CSS.
+- [Tailwind CSS](https://tailwindcss.com/): Framework de utilidad CSS.
+- [TypeScript](https://www.typescriptlang.org/): Superset de JavaScript con tipado estático.
+- [Vite](https://vitejs.dev/): Bundler rápido para proyectos modernos.
 
 ## Instalación
 
-1. Clona este repositorio en tu máquina local.
-2. Abre una terminal en la carpeta raíz del proyecto.
-3. Ejecuta el siguiente comando para instalar las dependencias:
+1. Clona este repositorio.
+2. Ejecuta `npm install` para instalar las dependencias.
+3. Utiliza los scripts definidos en `package.json` para desarrollar, construir y previsualizar la aplicación.
 
-  ```bash
-  npm install
-  ```
-
-## Scripts disponibles
-
-En el directorio del proyecto, puedes ejecutar los siguientes scripts:
-
-### `npm run dev`
-
-Ejecuta la aplicación en modo de desarrollo. Abre [http://localhost:3000](http://localhost:3000) para verla en el navegador.
-
-### `npm run build`
-
-Construye la aplicación para producción en la carpeta `build`.
-
-### `npm run lint`
-
-Ejecuta el linter para verificar y corregir errores de código.
-
-### `npm run preview`
-
-Inicia un servidor de vista previa para la aplicación construida en la carpeta `build`.
-
-## Tecnologías utilizadas
-
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Eslint
-
-## Contribución
-
-Si deseas contribuir a este proyecto, sigue los siguientes pasos:
-
-1. Haz un fork de este repositorio.
-2. Crea una nueva rama con tu nombre de usuario.
-3. Realiza los cambios necesarios.
-4. Envía un pull request.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+¡Gracias por visitar el sitio web de Kado Masajes!
