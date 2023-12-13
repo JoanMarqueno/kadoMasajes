@@ -14,10 +14,10 @@ export function TerapeuticMassage({ datos }: Props) {
 
   const truncateString = (str: string, num: number) => {
     if (isExpanded) {
-      return <p className="font-medium text-color-letra-nav">{str}</p>;
+      return <p className="font-medium text-color-letra-nav text-justify whitespace-break-spaces">{str}</p>;
     } else {
       return (
-        <p className="font-medium text-color-letra-nav">
+        <p className="font-medium text-color-letra-nav text-justify whitespace-break-spaces">
           {str.slice(0, num)}
           {str.length > num && "..."}
         </p>
@@ -44,11 +44,9 @@ export function TerapeuticMassage({ datos }: Props) {
             <div className="border-4  border-color-fondo-marron"></div>
 
             <div className="py-4 h-max">
-              {truncateString(datos.descripcion, 400)}
+              {truncateString(datos.descripcion, 250)}
               <Collapse isOpened={isExpanded}>
-                <p className="font-medium text-color-letra-nav text-justify whitespace-break-spaces">
-                  {datos.descripcion}
-                </p>
+              
               </Collapse>
             </div>
           </div>
