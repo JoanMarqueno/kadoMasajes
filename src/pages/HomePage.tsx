@@ -11,9 +11,10 @@ function HomePage() {
         texto: "Estás a un masaje de sentirte mejor…"
       }} urlFoto="/portada3.webp" />
       <div className="pt-10">
-        <h1 className="text-center text-3xl text-color-letra-nav pt-2 pb-10 ">
+        <h1 className="text-center text-3xl text-color-letra-nav pt-2 pb-5 ">
           Tratamientos
         </h1>
+        
       </div>
       <div className="pb-3 md:px-8 h-full w-full"> 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 relative ">

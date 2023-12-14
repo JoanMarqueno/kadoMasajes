@@ -23,13 +23,13 @@ export default function PresentacionRituales({ datos, urlFoto }: Props) {
 
       <div className="mx-auto max-w-2xl lg:max-w-4xl relative flex justify-center items-center h-full">
         <figure className="sm:mt-36 mt-20 text-center">
-          <blockquote
-            className="text-xl leading-8 mx-2 sm:mx-0  text-color-letra-blanca sm:text-2xl sm:leading-9 overflow-hidden"
-            style={{ fontFamily: 'Montserrat' }}
+        <blockquote
+            className="text-xl leading-8 mx-2 sm:mx-0  text-color-letra-blanca sm:text-3xl sm:leading-9 overflow-hidden"
+            
           >
             <p>{datos.titulo}</p>
             <br />
-            <p>{datos.texto}</p>
+            <p className="italic text-lg sm:text-2xl">{datos.texto}</p>
           </blockquote>
         </figure>
       </div>

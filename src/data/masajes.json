@@ -1,6 +1,7 @@
 [
   {
     "titulo": "Masaje Californiano",
+    "recomendado": true,
     "subtitulo": "Conexión energética y relajación profunda",
     "resumen": "Masaje inspirado en el movimiento de las olas del mar, con conexión energética y relajación profunda. Utiliza aceite caliente de almendras dulces para lograr una consciencia corporal profunda y eliminar bloqueos físicos y emocionales.",
     "src": "/californiano.webp",
@@ -8,6 +9,7 @@
   },
   {
     "titulo": "Masaje Relajante",
+    "recomendado": false,
     "subtitulo": "Alivia el estrés y la tensión",
     "resumen": "Masaje que aumenta la secreción de endorfinas para aliviar el estrés y la tensión. Con maniobras superficiales, mejora la circulación y alivia tensiones musculares, induciendo a un estado profundo de relajación.",
     "src": "/relajante.webp",
@@ -15,6 +17,7 @@
   },
   {
     "titulo": "Masaje Deportivo",
+    "recomendado": false,
     "subtitulo": "Preparación y recuperación",
     "resumen": "Indicado para aliviar dolencias frecuentes por sobrecarga, preparar el cuerpo antes de entrenar o ayudar a la recuperación post-esfuerzo. Utiliza técnicas para calentar músculos, oxigenarlos y favorecer el retorno venoso y el drenaje linfático.",
     "src": "/deportivo.webp",
@@ -22,13 +25,15 @@
   },
   {
     "titulo": "Masaje Deep Tissue",
+    "recomendado": false,
     "subtitulo": "Tejido profundo y liberación de tensiones",
     "resumen": "Masaje de tejido profundo que elimina tensiones en las capas más profundas de músculos y fascias. Emplea técnicas de quiromasaje con presión firme, relajando articulaciones, músculos y mejorando la movilidad.",
     "src": "/deeptissue.webp",
-    "descripcion": "Se trata de un masaje de tejido profundo que nada tiene que ver con un masaje deportivo, pese a que muchas personas consideran que es el mismo tipo de masaje. Se centra en las capas más profundas de los músculos de las fascias. Se emplean técnicas de quiromasaje pero con una presión más firme para eliminar tensiones y nudos musculares o adherencias.\n\nSe utiliza para tratar problemas musculoesqueléticos, tensiones y lesiones deportivas.\n\nGracias a este masaje se relajan en profundidad las articulaciones, los músculos y las fascias ayudando a que el cuerpo recupere espacios de movilidad más anchos y libres. Actúa sobre los síntomas del dolor localizado y crónico. Todo ello puede desembocar en recuperar una mejor postura en nuestro cuerpo.\n\nNo está indicado para los fans de los masajes relajantes ya que algunas maniobras pueden percibirse como molestas o dolorosas, aunque podemos considerarlo como un dolor liberador."
+    "descripcion": "Se trata de un masaje de tejido profundo que nada tiene que ver con un masaje deportivo, pese a que muchas personas consideran que es el mismo tipo de masaje. Se centra en las capas más profundas del tejido del músculo y la fascia, también llamado tejido conectivo. Se emplean técnicas de quiromasaje pero con una presión más firme para eliminar tensiones y nudos musculares o adherencias.\n\nSe utiliza para tratar problemas musculoesqueléticos, tensiones y lesiones deportivas.\n\nGracias a este masaje se relajan en profundidad las articulaciones, los músculos y las fascias ayudando a que el cuerpo recupere espacios de movilidad más anchos y libres. Actúa sobre los síntomas del dolor localizado y crónico. Todo ello puede desembocar en recuperar una mejor postura en nuestro cuerpo.\n\nNo está indicado para los fans de los masajes relajantes ya que algunas maniobras pueden percibirse como molestas o dolorosas, aunque podemos considerarlo como un dolor liberador."
   },
   {
     "titulo": "Masaje con Piedras Calientes",
+    "recomendado": false,
     "subtitulo": "Armonía y relajación",
     "resumen": "Masaje armonioso con piedras volcánicas que induce relajación muscular inmediata. Colocadas en puntos estratégicos, activan el flujo vital, mejoran la circulación y facilitan la eliminación de toxinas.",
     "src": "/piedras.webp",
@@ -36,6 +41,7 @@
   },
   {
     "titulo": "Masaje Focalizado",
+    "recomendado": false,
     "subtitulo": "Atención en zonas específicas",
     "resumen": "Consiste en la aplicación de diferentes técnicas de masaje focalizadas en el trabajo de zonas concretas, como espalda y cuello, ideal para personas con poco tiempo en su agenda para un tratamiento corporal.",
     "src": "/focalizado.webp",
@@ -43,6 +49,7 @@
   },
   {
     "titulo": "Masaje Facial y Craneal",
+    "recomendado": false,
     "subtitulo": "Relajación y estética",
     "resumen": "Masaje que abarca las zonas de cabeza, cara, cuello, escote y hombros. Emplea técnicas de digitopuntura craneal y facial para activar la circulación sanguínea, aliviar dolores de cabeza y mejorar la estética facial.",
     "src": "/craneofacial.webp",
@@ -50,6 +57,7 @@
   },
   {
     "titulo": "Reflexología Podal",
+    "recomendado": false,
     "subtitulo": "Equilibrio y bienestar desde los pies",
     "resumen": "Técnica que aprovecha puntos energéticos en los pies, con más de 70,000 conexiones nerviosas. Desbloquea energía, activa la circulación y estimula órganos, promoviendo equilibrio y bienestar.",
     "src": "/podal.webp",

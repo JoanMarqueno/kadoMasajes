@@ -33,7 +33,7 @@ export default function Navbar() {
 
       <nav className="bg-color-fondo-blanco shadow fixed w-full top-0 z-50 text-color-letra-nav font-medium">
         <div className="bg-color-fondo-marron p-2 justify-between pr-20 items-center space-x-6 hidden lg:flex">
-          <address className="pl-20 flex space-x-8">
+          <address className="pl-32 flex space-x-8">
             <a
               href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
               target="_blank"
@@ -42,7 +42,7 @@ export default function Navbar() {
               title="Direccion Kado Masajes"
               className="transition-colors duration-300 text-color-letra-footer text-center  hover:text-color-letra-blanca font-medium"
             >
-              Av. Ramón y Cajal, Tarragona
+              Av. Ramón y Cajal 5, 1-1 Tarragona
             </a>
             <div className="flex items-center space-x-2">
               <a

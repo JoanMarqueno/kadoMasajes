@@ -7,8 +7,8 @@ export default function Rituales() {
     <section className="">
         
         <PresentacionRituales datos={{
-            titulo: "Rituales",
-            texto: "En esta sección encontrarás los rituales que ofrecemos en Kadō Masajes."
+            titulo: "Estamos diseñando rituales de belleza facial para completar tu experiencia en Kadō Masajes",
+            texto: "Disponibles a principios de 2024"
         }} urlFoto="/portada1.webp"/>
     </section>
     )

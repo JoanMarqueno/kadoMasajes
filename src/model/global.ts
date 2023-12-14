@@ -4,6 +4,7 @@ import tarifas from '../data/tarifas.json';
 
 export interface MasajeData {
     titulo: string;
+    recomendado: boolean;
     subtitulo: string;
     resumen: string;
     src: string;
