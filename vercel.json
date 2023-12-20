@@ -1,9 +1,5 @@
-{
-  "rewrites": [
-    { "source": "/rituales", "destination": "/rituales" },
-    { "source": "/tarifas", "destination": "/tarifas" },
-    { "source": "/sobremi", "destination": "/sobremi" },
-    { "source": "/reserva", "destination": "/reserva" },
-    { "source": "/(.*)", "destination": "/pagina-de-error" }
-  ]
-}
+ {
+    "rewrites":  [
+      {"source": "/(.*)", "destination": "/"}
+    ]
+  }
