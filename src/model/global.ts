@@ -10,24 +10,14 @@ export interface MasajeData {
     src: string;
     descripcion: string;
   }
-  /**
-   * {
-      "nombre": "MASAJE RELAJANTE",
-      "primerTiempo": "1h",
-      "precioPrimerTiempo": "35€",
-      "segundoTiempo": "90min",
-      "precioSegundoTiempo": "50€",
-      "primerBono": "100€",
-      "segundoBono": "140€"
-    },
-   */
+
   export interface MassagePrice {
     nombre: string;
-    primerTiempo: string;
-    precioPrimerTiempo: string;
+    primerTiempo?: string | null;
+    precioPrimerTiempo?: string | null;
     segundoTiempo: string;
     precioSegundoTiempo: string;
-    primerBono: string;
+    primerBono?: string | null;
     segundoBono: string;
 
   }

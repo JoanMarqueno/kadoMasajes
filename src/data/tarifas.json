@@ -46,29 +46,29 @@
     },
     {
       "nombre": "Masaje Focalizado",
-      "primerTiempo": "30min",
-      "precioPrimerTiempo": "25€",
+      "primerTiempo": null,
+      "precioPrimerTiempo":null,
       "segundoTiempo": "45min",
       "precioSegundoTiempo": "30€",
-      "primerBono": "65€",
+      "primerBono": null,
       "segundoBono": "80€"
     },
     {
       "nombre": "Masaje Facial y Craneal",
-      "primerTiempo": "30min",
-      "precioPrimerTiempo": "25€",
+      "primerTiempo": null,
+      "precioPrimerTiempo":null,
       "segundoTiempo": "45min",
       "precioSegundoTiempo": "30€",
-      "primerBono": "65€",
+      "primerBono": null,
       "segundoBono": "80€"
     },
     {
       "nombre": "Reflexología Podal",
-      "primerTiempo": "30min",
-      "precioPrimerTiempo": "25€",
+      "primerTiempo": null,
+      "precioPrimerTiempo":null,
       "segundoTiempo": "45min",
       "precioSegundoTiempo": "30€",
-      "primerBono": "65€",
+      "primerBono": null,
       "segundoBono": "80€"
     }
   ]
