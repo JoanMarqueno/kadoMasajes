@@ -35,15 +35,7 @@
       "primerBono": "110€",
       "segundoBono": "160€"
     },
-    {
-      "nombre": "Masaje con Piedras Calientes",
-      "primerTiempo": "60min",
-      "precioPrimerTiempo": "40€",
-      "segundoTiempo": "90min",
-      "precioSegundoTiempo": "60€",
-      "primerBono": "110€",
-      "segundoBono": "160€"
-    },
+  
     {
       "nombre": "Masaje Focalizado",
       "primerTiempo": null,
