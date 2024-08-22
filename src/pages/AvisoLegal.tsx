@@ -1,9 +1,8 @@
 
 
-export default function LegalNotice() {
+export default function AvisoLegal() {
   return (
     <div>
-
       <div className="min-h-screen flex items-center md:pt-32 pt-16">
         <div className="max-w-screen-lg mx-auto flex flex-col items-start justify-center px-5 py-10 md:text-justify text-start text-gray-700">
           <h1 className="text-2xl font-bold text-color-letra-card mb-6">
@@ -97,6 +96,9 @@ export default function LegalNotice() {
           <h2 className="text-xl font-semibold text-color-letra-card mt-6 mb-4">
             3. Limitaciones del uso de la web
           </h2>
+          <p className="text-lg leading-relaxed mb-4">
+            Al hacer uso de la web te comprometes a no:
+          </p>
           <ul className="list-disc list-inside mb-4">
             <li>
               Realizar acciones susceptibles de alterar, deteriorar, interrumpir
