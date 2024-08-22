@@ -1,13 +1,12 @@
 
+import { Link } from "react-router-dom";
 import { MassagePrice } from "../model/global";
-import ScrollLink from "./scrollLink";
 
 type Props = {
   tarifa: MassagePrice;
 };
 
 export default function CardTarifa2({ tarifa }: Props) {
-
   const numberOfCards = tarifa.primerTiempo && tarifa.segundoTiempo ? 4 : 2;
 
   let cardClass: string;
@@ -28,7 +27,6 @@ export default function CardTarifa2({ tarifa }: Props) {
           <h2 className="text-2xl font-medium  mb-2 text-color-letra-footer">
             {tarifa.nombre}
           </h2>
-          
         </div>
         <div className={`${cardContainerClass}`}>
           {tarifa.primerTiempo && (
@@ -41,9 +39,11 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.precioPrimerTiempo}
                 </h3>
-                <ScrollLink to="/reserva">
+                <Link to="/reserva">
                   <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
+                    {window.innerWidth <= 768
+                      ? "Reserva"
+                      : "Reserva tu experiencia"}
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -56,7 +56,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                   </button>
-                </ScrollLink>
+                </Link>
               </div>
             </div>
           )}
@@ -69,9 +69,11 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.precioSegundoTiempo}
                 </h3>
-                <ScrollLink to="/reserva">
+                <Link to="/reserva">
                   <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
+                    {window.innerWidth <= 768
+                      ? "Reserva"
+                      : "Reserva tu experiencia"}
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -84,23 +86,27 @@ export default function CardTarifa2({ tarifa }: Props) {
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                   </button>
-                </ScrollLink>
+                </Link>
               </div>
             </div>
           )}
           {tarifa.primerBono && (
             <div className={`p-4 ${cardClass} w-1/2`}>
               <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">3 SESIONES</span>
+                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">
+                  3 SESIONES
+                </span>
                 <h3 className=" tracking-widest title-font mb-1 text-lg mt-2 sm:mt-0">
                   {tarifa.primerTiempo}
                 </h3>
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.primerBono}
                 </h3>
-                <ScrollLink to="/reserva">
+                <Link to="/reserva">
                   <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
+                    {window.innerWidth <= 768
+                      ? "Reserva"
+                      : "Reserva tu experiencia"}
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -113,23 +119,27 @@ export default function CardTarifa2({ tarifa }: Props) {
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                   </button>
-                </ScrollLink>
+                </Link>
               </div>
             </div>
           )}
           {tarifa.segundoBono && (
             <div className={`p-4 ${cardClass} w-1/2`}>
               <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">3 SESIONES</span>
+                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">
+                  3 SESIONES
+                </span>
                 <h3 className=" tracking-widest title-font mb-1 text-lg mt-2 sm:mt-0">
                   {tarifa.segundoTiempo}
                 </h3>
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.segundoBono}
                 </h3>
-                <ScrollLink to="/reserva">
+                <Link to="/reserva">
                   <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768 ? 'Reserva' : 'Reserva tu experiencia'}
+                    {window.innerWidth <= 768
+                      ? "Reserva"
+                      : "Reserva tu experiencia"}
                     <svg
                       fill="none"
                       stroke="currentColor"
@@ -142,7 +152,7 @@ export default function CardTarifa2({ tarifa }: Props) {
                       <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                   </button>
-                </ScrollLink>
+                </Link>
               </div>
             </div>
           )}

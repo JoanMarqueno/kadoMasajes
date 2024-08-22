@@ -8,24 +8,24 @@ import TarifasPage from './pages/TarifasPage';
 import Reserva from './pages/Reserva';
 import SobreMi from './pages/SobreMi';
 import NotFound from './pages/NotFound';
-import Rituales from './pages/Rituales';
-
-
-
+import Rituales from "./pages/Rituales";
+import AvisoLegal from "./pages/AvisoLegal";
+import ScrollToTop from "./components/scrollTop";
 
 function App() {
   return (
     <Router>
-      
-      <Navbar/>
+      <ScrollToTop />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path='/rituales' element={<Rituales/>} />
-        <Route path='/tarifas' element={<TarifasPage/>} />
-        <Route path='/sobremi' element={<SobreMi/>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/rituales" element={<Rituales />} />
+        <Route path="/tarifas" element={<TarifasPage />} />
+        <Route path="/sobremi" element={<SobreMi />} />
         {/**<Route path='/galeria' element={<GaleriaPage/>} />**/}
-        <Route path='/reserva' element={<Reserva/>} />
-        <Route path="/*" element={<NotFound/>} />
+        <Route path="/avisolegal" element={<AvisoLegal />} />
+        <Route path="/reserva" element={<Reserva />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>

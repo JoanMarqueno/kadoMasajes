@@ -1,10 +1,15 @@
+
 export default function SobreMi() {
+
   return (
     <section className="text-color-letra-nav body-font sm:pt-32 pt-10">
       <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <div
+          className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0"
+          style={{ aspectRatio: "2588 / 1742" }}
+        >
           <img
-            className="object-fill rounded"
+            className="object-fill w-full h-full rounded"
             alt="Imagen de Angel el masajista"
             src="/sobremi.webp"
           />
@@ -25,8 +30,8 @@ export default function SobreMi() {
           <p className="mb-8 leading-normal text-justify">
             Amplia experiencia como terapeuta en los SPAs de los mejores hoteles
             de Barcelona y Tarragona. Gracias a mi formación y experiencia he
-            conseguido crear una terapia basada en una perspectiva holística
-            del cuerpo, teniendo en cuenta nuestra parte física, energética y
+            conseguido crear una terapia basada en una perspectiva holística del
+            cuerpo, teniendo en cuenta nuestra parte física, energética y
             espiritual. De este modo la experiencia se convierte en un verdadero
             momento de conexión con nuestro interior para sanar desde dentro
             hacia afuera.

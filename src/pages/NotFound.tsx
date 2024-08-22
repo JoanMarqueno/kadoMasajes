@@ -1,4 +1,4 @@
-import ScrollLink from "../components/scrollLink";
+import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
@@ -10,8 +10,8 @@ export default function NotFound() {
             <p className="text-2xl md:text-3xl font-light leading-normal pb-5">
               Lo siento, no podemos encontrar la pagina que está buscando
             </p>
-            <ScrollLink to="/">
-            <button
+            <Link to="/">
+              <button
                 id="Boton volver a inicio"
                 className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco  disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                 type="button"
@@ -33,10 +33,9 @@ export default function NotFound() {
                   ></path>
                 </svg>
               </button>
-            </ScrollLink>
+            </Link>
           </div>
           <div className="max-w-lg"></div>
-          
         </div>
       </div>
     </div>

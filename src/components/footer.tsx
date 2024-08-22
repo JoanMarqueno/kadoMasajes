@@ -1,23 +1,22 @@
 import { Link } from "react-router-dom";
 import IconoInsta from "./Iconos/iconoInstagram";
-import ScrollLink from "./scrollLink";
 import IconoTelegram from "./Iconos/iconoTelegram";
 import IconoWhatsApp from "./Iconos/iconoWhatsapp";
 
 export const Footer = () => {
   return (
-    <footer className="bg-color-fondo font-semibold bottom-0 px-4 pt-16 mx-auto  md:px-12 lg:px-12 z-100">
-      <div className="flex  flex-col-reverse pt-5 pb-10 border-t lg:flex-row"></div>
-      <div className="grid  md:place-items-center md:items-stretch gap-10 sm:gap-0 mb-8 sm:grid-cols-2 lg:grid-cols-3 ">
+    <footer className="bg-color-fondo font-semibold bottom-0 px-4 pt-16 mx-auto md:px-12 lg:px-12 z-100">
+      <div className="flex justify-center pt-5 pb-10 border-t"></div>
+      <div className="grid md:place-items-center md:items-stretch gap-10 sm:gap-0 mb-8 sm:grid-cols-2 lg:grid-cols-3">
         <div className="sm:col-span-1">
-          <ScrollLink
+          <Link
             to="/"
             aria-label="Ir a pagina rituales"
             title="Logo compañía"
             className="inline-flex items-center"
           >
-            <img alt="Logo de Kado Masajes" src="/k.webp" width="300"></img>
-          </ScrollLink>
+            <img alt="Logo de Kado Masajes" src="/k.webp" width="300" />
+          </Link>
         </div>
         <div className="sm:col-span-1">
           <div className="space-y-2 text-base">
@@ -51,8 +50,8 @@ export const Footer = () => {
                 to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                 rel="noopener noreferrer"
                 target="_blank"
-                aria-label="Dicción localización Av. Ramón y Cajal, 5 1-1, Tarragona"
-                title="Dicción localización"
+                aria-label="Dirección localización Av. Ramón y Cajal, 5 1-1, Tarragona"
+                title="Dirección localización"
                 className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
               >
                 Av. Ramón y Cajal, 5 1-1, Tarragona
@@ -75,7 +74,6 @@ export const Footer = () => {
             >
               <IconoTelegram />
             </a>
-
             <a
               title="Enlace a nuestro Instagram"
               aria-label="Enlace a nuestro Instagram"
@@ -85,7 +83,6 @@ export const Footer = () => {
             >
               <IconoInsta />
             </a>
-
             <a
               title="Enlace a nuestro WhatsApp"
               aria-label="Enlace a nuestro WhatsApp"
@@ -98,7 +95,14 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row"></div>
+      <div className="flex justify-center pt-5 pb-10 border-t">
+        <Link
+          to="/avisolegal"
+          className="text-sm text-color-letra-footer hover:text-color-letra-card transition-colors duration-300"
+        >
+          Aviso Legal
+        </Link>
+      </div>
     </footer>
   );
 };
