@@ -2,20 +2,20 @@
     {
       "nombre": "Masaje Californiano",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "35€",
+      "precioPrimerTiempo": "40€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "50€",
-      "primerBono": "100€",
-      "segundoBono": "140€"
+      "precioSegundoTiempo": "60€",
+      "primerBono": "110€",
+      "segundoBono": "170€"
     },
     {
       "nombre": "Masaje Relajante",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "35€",
+      "precioPrimerTiempo": "40€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "50€",
-      "primerBono": "100€",
-      "segundoBono": "140€"
+      "precioSegundoTiempo": "60€",
+      "primerBono": "110€",
+      "segundoBono": "170€"
     },
     {
       "nombre": "Masaje Deportivo",
