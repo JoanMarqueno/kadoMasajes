@@ -9,10 +9,9 @@ import IconoTelegram from "./Iconos/iconoTelegram";
 
 const navigation = [
   { name: "Tratamientos", href: "/" },
-  { name: "Rituales", href: "/rituales" },
+  { name: "Vales Regalo", href: "/vales-regalo" },
   { name: "Tarifas", href: "/tarifas" },
   { name: "Sobre mí", href: "/sobremi" },
-  //{ name: "Galería", href: "/galeria" },
   { name: "Reservas", href: "/reserva" },
 ];
 

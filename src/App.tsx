@@ -8,9 +8,9 @@ import TarifasPage from './pages/TarifasPage';
 import Reserva from './pages/Reserva';
 import SobreMi from './pages/SobreMi';
 import NotFound from './pages/NotFound';
-import Rituales from "./pages/Rituales";
 import AvisoLegal from "./pages/AvisoLegal";
 import ScrollToTop from "./components/scrollTop";
+import ValesRegalo from './pages/ValesRegalo';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/rituales" element={<Rituales />} />
+        <Route path="/vales-regalo" element={<ValesRegalo />} />
         <Route path="/tarifas" element={<TarifasPage />} />
         <Route path="/sobremi" element={<SobreMi />} />
         {/**<Route path='/galeria' element={<GaleriaPage/>} />**/}

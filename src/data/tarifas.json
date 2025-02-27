@@ -35,16 +35,7 @@
       "primerBono": "110€",
       "segundoBono": "170€"
     },
-  
-    {
-      "nombre": "Masaje Focalizado",
-      "primerTiempo": null,
-      "precioPrimerTiempo":null,
-      "segundoTiempo": "45min",
-      "precioSegundoTiempo": "30€",
-      "primerBono": null,
-      "segundoBono": "80€"
-    },
+
     {
       "nombre": "Masaje Facial y Craneal",
       "primerTiempo": null,

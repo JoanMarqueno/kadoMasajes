@@ -13,7 +13,9 @@ export function TerapeuticMassage({ datos }: Props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const truncateString = (str: string, num: number) => {
-    return str.length > num ? `${str.slice(0, num)}...` : str;
+    const truncated = str.slice(0, num);
+    const lastSpace = truncated.lastIndexOf(" ");
+    return str.length > num ? `${truncated.slice(0, lastSpace)}...` : str;
   };
 
   return (
@@ -29,7 +31,7 @@ export function TerapeuticMassage({ datos }: Props) {
           src={datos.src}
           alt={datos.titulo}
         />
-        <div className="p-3 xl:pl-4 flex flex-col justify-between">
+        <div className="p-3 xl:pl-4 flex flex-col justify-between min-h-[280px]">
           <div>
             <div className="pb-4 flex justify-between">
               <h2 className="text-3xl text-color-letra-nav">{datos.titulo}</h2>
@@ -50,10 +52,9 @@ export function TerapeuticMassage({ datos }: Props) {
               </Collapse>
               {!isExpanded && (
                 <p className="font-medium text-color-letra-nav text-justify whitespace-break-spaces">
-                  {truncateString(datos.descripcion, 250)}
+                  {truncateString(datos.descripcion, 150)}
                 </p>
               )}
-              {/* Botón de expansión/colapso del texto */}
               <button
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-color-letra-card hover:text-color-letra-card mt-2"
