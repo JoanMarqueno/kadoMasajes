@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { MassagePrice } from "../model/global";
 
@@ -39,23 +38,23 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.precioPrimerTiempo}
                 </h3>
-                <Link to="/reserva">
-                  <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768
-                      ? "Reserva"
-                      : "Reserva tu experiencia"}
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
+                <Link
+                  to="/reserva"
+                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
+                >
+                  <span className="sm:hidden">Reserva</span>
+                  <span className="hidden sm:inline">Reserva tu experiencia</span>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -69,23 +68,23 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.precioSegundoTiempo}
                 </h3>
-                <Link to="/reserva">
-                  <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768
-                      ? "Reserva"
-                      : "Reserva tu experiencia"}
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
+                <Link
+                  to="/reserva"
+                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
+                >
+                  <span className="sm:hidden">Reserva</span>
+                  <span className="hidden sm:inline">Reserva tu experiencia</span>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -102,23 +101,23 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.primerBono}
                 </h3>
-                <Link to="/reserva">
-                  <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768
-                      ? "Reserva"
-                      : "Reserva tu experiencia"}
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
+                <Link
+                  to="/reserva"
+                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
+                >
+                  <span className="sm:hidden">Reserva</span>
+                  <span className="hidden sm:inline">Reserva tu experiencia</span>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
                 </Link>
               </div>
             </div>
@@ -135,23 +134,23 @@ export default function CardTarifa2({ tarifa }: Props) {
                 <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
                   {tarifa.segundoBono}
                 </h3>
-                <Link to="/reserva">
-                  <button className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded">
-                    {window.innerWidth <= 768
-                      ? "Reserva"
-                      : "Reserva tu experiencia"}
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
+                <Link
+                  to="/reserva"
+                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
+                >
+                  <span className="sm:hidden">Reserva</span>
+                  <span className="hidden sm:inline">Reserva tu experiencia</span>
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    className="w-4 h-4 ml-auto"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
                 </Link>
               </div>
             </div>

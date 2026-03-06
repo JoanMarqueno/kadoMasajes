@@ -19,24 +19,26 @@ export const Footer = () => {
             Contacto
           </h3>
           <div className="space-y-4">
-            <Link
-              to="tel:+34623519832"
+            <a
+              href="tel:+34623519832"
               className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
             >
               +34 623 51 98 32
-            </Link>
-            <Link
-              to="mailto:kadomasajes@gmail.com"
+            </a>
+            <a
+              href="mailto:kadomasajes@gmail.com"
               className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
             >
               kadomasajes@gmail.com
-            </Link>
-            <Link
-              to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+            </a>
+            <a
+              href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+              target="_blank"
+              rel="noopener noreferrer"
               className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
             >
               Av. Ramón y Cajal, 5 1-1, Tarragona
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -47,18 +49,27 @@ export const Footer = () => {
           <div className="flex justify-center space-x-6">
             <a
               href="https://t.me/kadomasajes"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram de Kadō Masajes"
               className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
             >
               <IconoTelegram />
             </a>
             <a
               href="https://www.instagram.com/kadomasajes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram de Kadō Masajes"
               className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
             >
               <IconoInsta />
             </a>
             <a
               href="https://wa.me/34623519832"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp de Kadō Masajes"
               className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
             >
               <IconoWhatsApp />
@@ -81,24 +92,26 @@ export const Footer = () => {
               Contacto
             </h3>
             <div className="space-y-2">
-              <Link
-                to="tel:+34623519832"
+              <a
+                href="tel:+34623519832"
                 className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
               >
                 +34 623 51 98 32
-              </Link>
-              <Link
-                to="mailto:kadomasajes@gmail.com"
+              </a>
+              <a
+                href="mailto:kadomasajes@gmail.com"
                 className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
               >
                 kadomasajes@gmail.com
-              </Link>
-              <Link
-                to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+              </a>
+              <a
+                href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-color-letra-footer hover:text-color-letra-card transition-colors"
               >
                 Av. Ramón y Cajal, 5 1-1, Tarragona
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -111,6 +124,7 @@ export const Footer = () => {
                 href="https://t.me/kadomasajes"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram de Kadō Masajes"
                 className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
               >
                 <IconoTelegram />
@@ -119,6 +133,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/kadomasajes/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram de Kadō Masajes"
                 className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
               >
                 <IconoInsta />
@@ -127,6 +142,7 @@ export const Footer = () => {
                 href="https://wa.me/34623519832"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp de Kadō Masajes"
                 className="text-color-letra-footer hover:text-color-letra-card transition-all hover:scale-110"
               >
                 <IconoWhatsApp />

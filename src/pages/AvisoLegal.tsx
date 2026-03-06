@@ -1,8 +1,14 @@
-
+import Seo from "../components/Seo";
 
 export default function AvisoLegal() {
   return (
     <div>
+      <Seo
+        title="Aviso Legal | Kadō Masajes"
+        description="Aviso legal y condiciones de uso de la web oficial de Kadō Masajes."
+        path="/avisolegal"
+        robots="noindex,follow"
+      />
       <div className="min-h-screen flex items-center md:pt-32 pt-16">
         <div className="max-w-screen-lg mx-auto flex flex-col items-start justify-center px-5 py-10 md:text-justify text-start text-gray-700">
           <h1 className="text-2xl font-bold text-color-letra-card mb-6">

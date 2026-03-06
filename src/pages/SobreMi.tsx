@@ -1,6 +1,14 @@
+import Seo from "../components/Seo";
+
 export default function SobreMi() {
   return (
     <div className="bg-color-fondo min-h-screen pt-36 pb-16">
+      <Seo
+        title="Sobre Kadō Masajes | Quiromasaje en Tarragona"
+        description="Conoce la formación y experiencia de Ángel Martín Sánchez, terapeuta especializado en quiromasaje y técnicas de relajación."
+        path="/sobremi"
+        image="/sobremi.webp"
+      />
       <div className="text-center mb-16">
         <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
           Sobre mí

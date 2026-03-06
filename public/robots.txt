@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /tarifas
-Allow: /sobremi
-Allow: /galeria
-Allow: /reserva
+Sitemap: https://www.kadomasajes.com/sitemap.xml

@@ -63,30 +63,28 @@ export function TerapeuticMassage({ datos }: Props) {
               </button>
             </div>
           </div>
-          <div className="text-center text-clip items-center">
-            <Link to="/reserva">
-              <button
-                id={datos.src}
-                className="flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card hover:text-color-fondo-blanco disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                type="button"
+          <div className="text-clip items-center">
+            <Link
+              to="/reserva"
+              id={datos.src}
+              className="inline-flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card hover:text-color-fondo-blanco"
+            >
+              Reserva tu experiencia
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                aria-hidden="true"
+                className="h-4 w-4"
               >
-                Reserva tu experiencia
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  ></path>
-                </svg>
-              </button>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                ></path>
+              </svg>
             </Link>
           </div>
         </div>

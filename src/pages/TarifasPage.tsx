@@ -1,9 +1,16 @@
 import CardTarifa2 from "../components/cardTarifa2";
+import Seo from "../components/Seo";
 import { masajeTarifa } from "../model/global";
 
 function TarifasPage() {
   return (
     <div className="bg-color-fondo min-h-screen pt-36 pb-16">
+      <Seo
+        title="Tarifas de Masajes en Tarragona | Kadō Masajes"
+        description="Consulta precios y bonos de masajes en Tarragona: masaje relajante, deportivo, deep tissue, facial y más."
+        path="/tarifas"
+        image="/kado.webp"
+      />
       <div className="text-center mb-16">
         <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
           Tarifas

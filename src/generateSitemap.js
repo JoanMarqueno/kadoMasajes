@@ -1,21 +1,21 @@
-import { SitemapStream, EnumChangefreq } from 'sitemap';
-import { createWriteStream } from 'fs';
+import { createWriteStream } from "node:fs";
+import { SitemapStream } from "sitemap";
 
-const createCustomSitemap = () => {
-    const stream = new SitemapStream({ hostname: 'http://www.kadomasajes.com' });
+const hostname = "https://www.kadomasajes.com";
+const routes = ["/", "/vales-regalo", "/tarifas", "/sobremi", "/reserva"];
 
-    // Agrega las URLs de tus páginas al sitemap
-    stream.write({ url: '/' });
-    stream.write({ url: '/rituales', changefreq: EnumChangefreq.WEEKLY });
-    stream.write({ url: '/tarifas', changefreq: EnumChangefreq.WEEKLY });
-    stream.write({ url: '/sobremi', changefreq: EnumChangefreq.MONTHLY });
-    stream.write({ url: '/reserva', changefreq: EnumChangefreq.MONTHLY });
+function createCustomSitemap() {
+  const stream = new SitemapStream({ hostname });
+  const writeStream = createWriteStream("./public/sitemap.xml");
+  const now = new Date().toISOString();
 
-    // Finaliza el sitemap y escribe en el archivo
-    
-    stream.end();
-    stream.pipe(createWriteStream('./public/sitemap.xml'));
-};
+  stream.pipe(writeStream);
 
-// Ejecuta la función para crear el sitemap
+  for (const route of routes) {
+    stream.write({ url: route, lastmod: now });
+  }
+
+  stream.end();
+}
+
 createCustomSitemap();

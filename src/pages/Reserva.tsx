@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
 import IconoWhatsApp from "../components/Iconos/iconoWhatsapp";
+import Seo from "../components/Seo";
 
 export default function Reserva() {
   return (
     <div className="bg-color-fondo min-h-screen pt-36 pb-16">
+      <Seo
+        title="Reserva tu masaje en Tarragona | Kadō Masajes"
+        description="Reserva tu cita de masaje en Kadō Masajes. Contacta por WhatsApp, teléfono o email y encuentra nuestra ubicación en Tarragona."
+        path="/reserva"
+        image="/kado.webp"
+      />
       {/* Encabezado */}
       <div className="text-center mb-16">
         <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
@@ -55,35 +61,36 @@ export default function Reserva() {
                           <span className="mr-3 text-color-fondo-marron font-medium w-24">
                             Dirección:
                           </span>
-                          <Link
-                            to="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
+                          <a
+                            href="https://maps.app.goo.gl/GnHFHcMNXit1jtJ26"
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="text-color-letra-nav hover:text-color-letra-card transition-colors"
                           >
                             Av. Ramón y Cajal, 5 1-1, Tarragona
-                          </Link>
+                          </a>
                         </div>
                         <div className="flex items-start">
                           <span className="mr-3 text-color-fondo-marron font-medium w-24">
                             Email:
                           </span>
-                          <Link
-                            to="mailto:kadomasajes@gmail.com"
+                          <a
+                            href="mailto:kadomasajes@gmail.com"
                             className="text-color-letra-nav hover:text-color-letra-card transition-colors"
                           >
                             kadomasajes@gmail.com
-                          </Link>
+                          </a>
                         </div>
                         <div className="flex items-start">
                           <span className="mr-3 text-color-fondo-marron font-medium w-24">
                             Teléfono:
                           </span>
-                          <Link
-                            to="tel:+34623519832"
+                          <a
+                            href="tel:+34623519832"
                             className="text-color-letra-nav hover:text-color-letra-card transition-colors"
                           >
                             +34 623 51 98 32
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -98,14 +105,15 @@ export default function Reserva() {
                       </p>
                     </div>
 
-                    <Link
-                      to="https://wa.me/34623519832"
+                    <a
+                      href="https://wa.me/34623519832"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 bg-color-fondo-marron text-color-fondo-blanco px-6 py-3.5 rounded-lg hover:bg-color-letra-card transition-all duration-300 w-full sm:w-auto shadow-sm hover:shadow-md"
                     >
                       <IconoWhatsApp />
                       <span>Solicitar cita</span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

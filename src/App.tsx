@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage';
 import Navbar from './components/navBar';
 import { Footer } from "./components/footer";
 import TarifasPage from './pages/TarifasPage';
-//import GaleriaPage from './pages/GaleriaPage';
 import Reserva from './pages/Reserva';
 import SobreMi from './pages/SobreMi';
 import NotFound from './pages/NotFound';
@@ -16,17 +15,24 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-color-fondo-blanco focus:px-4 focus:py-2 focus:text-color-letra-nav focus:shadow"
+      >
+        Saltar al contenido principal
+      </a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/vales-regalo" element={<ValesRegalo />} />
-        <Route path="/tarifas" element={<TarifasPage />} />
-        <Route path="/sobremi" element={<SobreMi />} />
-        {/**<Route path='/galeria' element={<GaleriaPage/>} />**/}
-        <Route path="/avisolegal" element={<AvisoLegal />} />
-        <Route path="/reserva" element={<Reserva />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
+      <main id="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/vales-regalo" element={<ValesRegalo />} />
+          <Route path="/tarifas" element={<TarifasPage />} />
+          <Route path="/sobremi" element={<SobreMi />} />
+          <Route path="/avisolegal" element={<AvisoLegal />} />
+          <Route path="/reserva" element={<Reserva />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );

@@ -45,7 +45,6 @@ export default function Navbar() {
             <a
               rel="noopener noreferrer"
               href="tel:+34623519832"
-              target="_blank"
               aria-label="Telefono empresa"
               title="Contacto telefono"
               className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
@@ -60,6 +59,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             href="https://t.me/kadomasajes"
             target="_blank"
+            aria-label="Telegram de Kadō Masajes"
             className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
           >
             <IconoTelegram />
@@ -69,6 +69,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             href="https://www.instagram.com/kadomasajes/"
             target="_blank"
+            aria-label="Instagram de Kadō Masajes"
             className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
           >
             <IconoInsta />
@@ -78,6 +79,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             href="https://wa.me/34623519832"
             target="_blank"
+            aria-label="WhatsApp de Kadō Masajes"
             className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-blanca"
           >
             <IconoWhatsApp />
@@ -87,8 +89,8 @@ export default function Navbar() {
 
       <div className="container mx-auto p-6 pl-6 py-2 lg:flex lg:justify-between lg:items-center">
         <div className="flex justify-between items-center">
-          <a
-            href="/"
+          <NavLink
+            to="/"
             aria-label="Ir a página principal"
             title="Acceso a página principal"
             onClick={() => window.scrollTo(0, 0)}
@@ -98,12 +100,12 @@ export default function Navbar() {
               className="w-36 lg:w-44"
               alt="Logo de Kado Masajes"
             />
-          </a>
+          </NavLink>
           <div className="lg:hidden pt-2">
             <button
               type="button"
               className="hover:color-letra-nav focus:outline-none"
-              aria-label="toggle menu"
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
               onClick={() => handleMenuClick()}
             >
               <Hamburger aria-label="Icono Menú" size={28} toggled={isOpen} />
@@ -149,6 +151,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     href="https://t.me/kadomasajes"
                     target="_blank"
+                    aria-label="Telegram de Kadō Masajes"
                     className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                   >
                     <IconoTelegram />
@@ -158,6 +161,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     href="https://www.instagram.com/kadomasajes/"
                     target="_blank"
+                    aria-label="Instagram de Kadō Masajes"
                     className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                   >
                     <IconoInsta />
@@ -167,6 +171,7 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     href="https://wa.me/34623519832"
                     target="_blank"
+                    aria-label="WhatsApp de Kadō Masajes"
                     className="transition-colors duration-300 text-color-letra-footer hover:text-color-letra-card"
                   >
                     <IconoWhatsApp />
