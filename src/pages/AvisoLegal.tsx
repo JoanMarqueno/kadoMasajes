@@ -11,7 +11,7 @@ export default function AvisoLegal() {
       />
       <div className="min-h-screen flex items-center md:pt-32 pt-16">
         <div className="max-w-screen-lg mx-auto flex flex-col items-start justify-center px-5 py-10 md:text-justify text-start text-gray-700">
-          <h1 className="text-2xl font-bold text-color-letra-card mb-6">
+          <h1 className="kado-heading text-2xl sm:text-3xl text-color-letra-nav mb-6">
             Aviso Legal
           </h1>
 
@@ -33,7 +33,7 @@ export default function AvisoLegal() {
             siguiente información acerca de la Web:
           </p>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6 mb-4">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6 mb-4">
             1. Conócenos
           </h2>
           <ul className="list-disc list-inside mb-4">
@@ -60,7 +60,7 @@ export default function AvisoLegal() {
             quiromasaje.
           </p>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6 mb-4">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6 mb-4">
             2. Uso de la web
           </h2>
           <p className="text-lg leading-relaxed mb-4">
@@ -99,7 +99,7 @@ export default function AvisoLegal() {
             que salgas de esta página y no realices ninguna acción.
           </p>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6 mb-4">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6 mb-4">
             3. Limitaciones del uso de la web
           </h2>
           <p className="text-lg leading-relaxed mb-4">
@@ -127,7 +127,7 @@ export default function AvisoLegal() {
             </li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6 mb-4">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6 mb-4">
             4. Propiedad intelectual y/o industrial
           </h2>
           <p className="text-lg leading-relaxed mb-4">
@@ -150,10 +150,10 @@ export default function AvisoLegal() {
             contenidos.
           </p>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6">
             5. Responsabilidad
           </h2>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             Sobre la información:
           </h3>
           <p className="text-lg leading-relaxed mb-4">
@@ -161,7 +161,7 @@ export default function AvisoLegal() {
             informativa sin que garanticemos su exhaustividad, corrección,
             vigencia o utilidad para un fin concreto.
           </p>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             De la disponibilidad de la web:
           </h3>
           <p className="text-lg leading-relaxed mb-4">
@@ -174,10 +174,10 @@ export default function AvisoLegal() {
             y otros elementos dañinos.
           </p>
 
-          <h2 className="text-xl font-semibold text-color-letra-card mt-6">
+          <h2 className="kado-heading text-xl text-color-letra-card mt-6">
             6. Disposiciones varias
           </h2>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             Atención al cliente:
           </h3>
           <p className="text-lg leading-relaxed mb-4">
@@ -193,7 +193,7 @@ export default function AvisoLegal() {
             y atenderemos tu consulta a la mayor brevedad posible, y en
             cualquier caso, antes de 30 días.
           </p>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             Independencia e integridad de las cláusulas:
           </h3>
           <p className="text-lg leading-relaxed mb-4">
@@ -204,7 +204,7 @@ export default function AvisoLegal() {
             integrarse con otras, que siendo conformes a la ley, respondan a la
             finalidad de las sustituidas.
           </p>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             Modificación del aviso legal:
           </h3>
           <p className="text-lg leading-relaxed mb-4">
@@ -213,7 +213,7 @@ export default function AvisoLegal() {
             cualquier momento, pero no entrarán en vigor hasta 14 días después
             de publicarse.
           </p>
-          <h3 className="text-xl font-semibold mt-4 mb-2">
+          <h3 className="kado-heading text-xl text-color-letra-nav mt-4 mb-2">
             Jurisdicción y ley aplicable:
           </h3>
           <p className="text-lg leading-relaxed mb-4">

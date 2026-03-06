@@ -43,7 +43,7 @@ export default function ValesRegalo() {
                   </p>
 
                   <div className="bg-color-fondo-marron/5 p-6 rounded-xl border border-color-fondo-marron/10">
-                    <h2 className="text-lg sm:text-xl text-color-letra-nav font-medium mb-4">
+                    <h2 className="kado-heading text-lg sm:text-xl text-color-letra-nav mb-4">
                       Información importante:
                     </h2>
                     <ul className="space-y-4 text-color-letra-nav">

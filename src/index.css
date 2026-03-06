@@ -27,14 +27,6 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: "Cormorant", serif;
-  letter-spacing: 0.01em;
-}
-
 .navbar {
   position: fixed;
   top: 0;
@@ -42,6 +34,14 @@ h4 {
 }
 
 @layer components {
+  .kado-display {
+    @apply font-custom-font2 tracking-[0.01em];
+  }
+
+  .kado-heading {
+    @apply font-custom-font font-semibold tracking-[0.01em];
+  }
+
   .section-title {
     @apply font-custom-font2 text-4xl sm:text-5xl text-color-letra-nav;
   }

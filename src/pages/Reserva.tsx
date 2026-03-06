@@ -53,7 +53,7 @@ export default function Reserva() {
                     </p>
 
                     <div className="bg-color-fondo-marron/5 p-6 rounded-xl border border-color-fondo-marron/10">
-                      <h3 className="font-medium text-xl text-color-letra-nav mb-4">
+                      <h3 className="kado-heading text-xl text-color-letra-nav mb-4">
                         Información de contacto
                       </h3>
                       <div className="space-y-4">

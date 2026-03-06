@@ -39,7 +39,7 @@ export default function SobreMi() {
               <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center">
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-2xl sm:text-3xl text-color-letra-nav font-medium mb-4">
+                    <h2 className="kado-display text-2xl sm:text-3xl text-color-letra-nav font-medium mb-4">
                       Ángel Martín Sánchez
                     </h2>
                     <div className="w-20 border-b-4 border-color-fondo-marron"></div>
@@ -47,7 +47,7 @@ export default function SobreMi() {
 
                   <div className="space-y-6">
                     <div className="bg-color-fondo-marron/5 p-6 rounded-xl border border-color-fondo-marron/10">
-                      <h3 className="font-medium text-xl text-color-letra-nav mb-4">
+                      <h3 className="kado-heading text-xl text-color-letra-nav mb-4">
                         Formación
                       </h3>
                       <ul className="space-y-4 text-color-letra-nav">

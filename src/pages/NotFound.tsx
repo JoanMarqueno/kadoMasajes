@@ -12,14 +12,14 @@ export default function NotFound() {
       <div className="h-screen w-screen bg-gray-100 flex items-center">
         <div className="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">
           <div className="max-w-md ">
-            <h1 className="text-5xl font-dark font-bold pb-5">404</h1>
-            <p className="text-2xl md:text-3xl font-light leading-normal pb-5">
+            <h1 className="kado-display text-6xl text-color-letra-nav pb-5">404</h1>
+            <p className="text-xl md:text-2xl text-color-letra-nav/90 leading-relaxed pb-5">
               Lo siento, no podemos encontrar la pagina que está buscando
             </p>
             <Link
               to="/"
               id="Boton volver a inicio"
-              className="inline-flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco"
+              className="font-custom-font inline-flex select-none items-center text-2xl gap-2 rounded-lg py-3 px-3 text-center align-middle transition-all text-color-letra-card hover:bg-color-letra-card active:bg-color-letra-card-500/30 hover:text-color-fondo-blanco"
             >
               Volver a inicio
               <svg
