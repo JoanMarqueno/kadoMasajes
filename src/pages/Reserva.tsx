@@ -12,10 +12,10 @@ export default function Reserva() {
       />
       {/* Encabezado */}
       <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
+        <h1 className="section-title mb-3">
           Reservas
         </h1>
-        <p className="text-base sm:text-lg text-color-letra-nav italic max-w-2xl mx-auto">
+        <p className="section-subtitle">
           Tu bienestar, nuestra prioridad
         </p>
         <div className="mt-6 flex justify-center">
@@ -25,7 +25,7 @@ export default function Reserva() {
 
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-color-fondo-blanco rounded-2xl shadow-xl overflow-hidden">
+          <div className="kado-surface overflow-hidden">
             <div className="flex flex-col lg:flex-row items-stretch">
               {/* Mapa */}
               <div className="lg:w-1/2 relative min-h-[400px] lg:min-h-[600px]">

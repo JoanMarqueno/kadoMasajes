@@ -11,10 +11,10 @@ export default function ValesRegalo() {
         image="/vale-regalo-ejemplo.webp"
       />
       <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
+        <h1 className="section-title mb-3">
           Vales Regalo
         </h1>
-        <p className="px-4 text-base sm:text-lg text-color-letra-nav italic max-w-2xl mx-auto whitespace-normal break-words">
+        <p className="section-subtitle whitespace-normal break-words">
           El mejor regalo para cuidar a las personas que quieres
         </p>
         <div className="mt-6 flex justify-center">
@@ -24,7 +24,7 @@ export default function ValesRegalo() {
 
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-color-fondo-blanco rounded-2xl shadow-xl overflow-hidden">
+          <div className="kado-surface overflow-hidden">
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-1/2 p-8 sm:p-10 flex items-center justify-center bg-color-fondo-marron/5">
                 <img

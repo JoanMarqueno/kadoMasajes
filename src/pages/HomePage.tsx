@@ -1,6 +1,7 @@
 import { TerapeuticMassage } from "../components/card";
 import Presentacion from "../components/presentacion";
 import Seo from "../components/Seo";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import { masajeInfo } from "../model/global";
 
 function HomePage() {
@@ -66,11 +67,11 @@ function HomePage() {
         <div className="text-center mb-16">
           <h2
             id="tratamientos-title"
-            className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3"
+            className="section-title mb-3"
           >
             Tratamientos
           </h2>
-          <p className="text-base sm:text-lg text-color-letra-nav italic max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Descubre nuestros servicios personalizados
           </p>
           <div className="mt-6 flex justify-center">
@@ -80,13 +81,22 @@ function HomePage() {
 
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-8">
-              {masajeInfo.map((masaje) => (
-                <div key={masaje.titulo} className="relative z-0">
-                  <TerapeuticMassage datos={masaje} />
-                </div>
-              ))}
-            </div>
+            <LazyMotion features={domAnimation}>
+              <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-8">
+                {masajeInfo.map((masaje, index) => (
+                  <m.div
+                    key={masaje.titulo}
+                    className="relative z-0 h-full"
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                  >
+                    <TerapeuticMassage datos={masaje} />
+                  </m.div>
+                ))}
+              </div>
+            </LazyMotion>
           </div>
         </div>
       </section>

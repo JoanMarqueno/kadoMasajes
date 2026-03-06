@@ -12,10 +12,10 @@ function TarifasPage() {
         image="/kado.webp"
       />
       <div className="text-center mb-16">
-        <h1 className="text-3xl sm:text-4xl text-color-letra-nav font-medium mb-3">
+        <h1 className="section-title mb-3">
           Tarifas
         </h1>
-        <p className="text-base sm:text-lg text-color-letra-nav italic max-w-2xl mx-auto">
+        <p className="section-subtitle">
           Invierte en bienestar
         </p>
         <div className="mt-6 flex justify-center">
@@ -25,14 +25,9 @@ function TarifasPage() {
 
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid gap-8">
+          <div className="space-y-8">
             {masajeTarifa.map((tarifa) => (
-              <div
-                key={tarifa.nombre}
-                className="bg-color-fondo-blanco rounded-xl shadow-lg overflow-hidden"
-              >
-                <CardTarifa2 tarifa={tarifa} />
-              </div>
+              <CardTarifa2 key={tarifa.nombre} tarifa={tarifa} />
             ))}
           </div>
         </div>

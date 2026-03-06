@@ -5,157 +5,125 @@ type Props = {
   tarifa: MassagePrice;
 };
 
-export default function CardTarifa2({ tarifa }: Props) {
-  const numberOfCards = tarifa.primerTiempo && tarifa.segundoTiempo ? 4 : 2;
+type PriceRow = {
+  key: string;
+  tipo: "sesion" | "bono";
+  duracion: string;
+  precio: string;
+};
 
-  let cardClass: string;
-  let cardContainerClass: string;
-  if (numberOfCards === 4) {
-    cardClass = "xl:w-1/4";
-    cardContainerClass = "flex flex-wrap -m-4";
-    // Resto del código para cuando numberOfCards es 4
-  } else {
-    cardClass = "xl:w-1/4";
-    cardContainerClass = "flex flex-wrap -m-4 justify-center";
-    // Resto del código para cuando numberOfCards es 2
+function buildRows(tarifa: MassagePrice): PriceRow[] {
+  const rows: PriceRow[] = [];
+
+  if (tarifa.primerTiempo && tarifa.precioPrimerTiempo) {
+    rows.push({
+      key: `${tarifa.nombre}-sesion-${tarifa.primerTiempo}`,
+      tipo: "sesion",
+      duracion: tarifa.primerTiempo,
+      precio: tarifa.precioPrimerTiempo,
+    });
   }
+
+  if (tarifa.segundoTiempo && tarifa.precioSegundoTiempo) {
+    rows.push({
+      key: `${tarifa.nombre}-sesion-${tarifa.segundoTiempo}`,
+      tipo: "sesion",
+      duracion: tarifa.segundoTiempo,
+      precio: tarifa.precioSegundoTiempo,
+    });
+  }
+
+  if (tarifa.primerTiempo && tarifa.primerBono) {
+    rows.push({
+      key: `${tarifa.nombre}-bono-${tarifa.primerTiempo}`,
+      tipo: "bono",
+      duracion: tarifa.primerTiempo,
+      precio: tarifa.primerBono,
+    });
+  }
+
+  if (tarifa.segundoTiempo && tarifa.segundoBono) {
+    rows.push({
+      key: `${tarifa.nombre}-bono-${tarifa.segundoTiempo}`,
+      tipo: "bono",
+      duracion: tarifa.segundoTiempo,
+      precio: tarifa.segundoBono,
+    });
+  }
+
+  return rows;
+}
+
+export default function CardTarifa2({ tarifa }: Props) {
+  const rows = buildRows(tarifa);
+
   return (
-    <section className="text-color-letra-footer body-font overflow-hidden p-6">
-      <div className="container mx-auto sm:py-10 sm:px-5 sm:border-2 sm:border-color-fondo-marron sm:shadow-lg">
-        <div className="flex flex-col text-center w-full my-5">
-          <h2 className="text-2xl font-medium  mb-2 text-color-letra-footer">
-            {tarifa.nombre}
-          </h2>
-        </div>
-        <div className={`${cardContainerClass}`}>
-          {tarifa.primerTiempo && (
-            <div className={`p-4 ${cardClass} w-1/2`}>
-              <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <div className="flex justify-between items-center"></div>
-                <h3 className=" tracking-widest mb-1 text-lg ">
-                  {tarifa.primerTiempo}
-                </h3>
-                <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
-                  {tarifa.precioPrimerTiempo}
-                </h3>
-                <Link
-                  to="/reserva"
-                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
-                >
-                  <span className="sm:hidden">Reserva</span>
-                  <span className="hidden sm:inline">Reserva tu experiencia</span>
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </Link>
+    <section className="kado-surface rounded-3xl px-5 py-6 sm:px-8 sm:py-8">
+      <header className="mb-5 text-center sm:text-left">
+        <h2 className="font-custom-font2 text-4xl sm:text-5xl text-color-letra-footer leading-tight">
+          {tarifa.nombre}
+        </h2>
+      </header>
+
+      <ul className="space-y-2">
+        {rows.map((row, index) => {
+          const isBono = row.tipo === "bono";
+          const isLast = index === rows.length - 1;
+
+          return (
+            <li
+              key={row.key}
+              className={`flex items-end justify-between gap-4 py-4 ${
+                isBono
+                  ? "rounded-2xl border border-color-fondo-marron/35 bg-gradient-to-r from-color-fondo-marron/20 to-color-fondo-marron/10 px-3 sm:px-4"
+                  : `${isLast ? "" : "border-b border-color-fondo-marron/25"}`
+              }`}
+            >
+              <div className="min-w-0">
+                {isBono ? (
+                  <p className="inline-flex items-center rounded-full border border-color-fondo-marron/45 bg-color-fondo-blanco/70 px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-color-letra-card">
+                    Bono 3 sesiones
+                  </p>
+                ) : (
+                  <p className="text-[0.7rem] uppercase tracking-[0.2em] text-color-letra-footer/70">
+                    Sesión
+                  </p>
+                )}
+                <p className="mt-1 text-lg sm:text-xl text-color-letra-nav">
+                  {row.duracion}
+                </p>
               </div>
-            </div>
-          )}
-          {tarifa.segundoTiempo && (
-            <div className={`p-4 ${cardClass} w-1/2`}>
-              <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <h3 className=" tracking-widest title-font mb-1 text-lg ">
-                  {tarifa.segundoTiempo}
-                </h3>
-                <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
-                  {tarifa.precioSegundoTiempo}
-                </h3>
-                <Link
-                  to="/reserva"
-                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
-                >
-                  <span className="sm:hidden">Reserva</span>
-                  <span className="hidden sm:inline">Reserva tu experiencia</span>
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          )}
-          {tarifa.primerBono && (
-            <div className={`p-4 ${cardClass} w-1/2`}>
-              <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">
-                  3 SESIONES
-                </span>
-                <h3 className=" tracking-widest title-font mb-1 text-lg mt-2 sm:mt-0">
-                  {tarifa.primerTiempo}
-                </h3>
-                <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
-                  {tarifa.primerBono}
-                </h3>
-                <Link
-                  to="/reserva"
-                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
-                >
-                  <span className="sm:hidden">Reserva</span>
-                  <span className="hidden sm:inline">Reserva tu experiencia</span>
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          )}
-          {tarifa.segundoBono && (
-            <div className={`p-4 ${cardClass} w-1/2`}>
-              <div className="h-full p-6 rounded-lg border-2 border-color-fondo-marron/80 flex flex-col relative overflow-hidden">
-                <span className="bg-color-fondo-marron text-color-fondo-blanco px-3 py-1 tracking-widest text-xs sm:text-xl absolute right-0 top-0 rounded-bl">
-                  3 SESIONES
-                </span>
-                <h3 className=" tracking-widest title-font mb-1 text-lg mt-2 sm:mt-0">
-                  {tarifa.segundoTiempo}
-                </h3>
-                <h3 className="sm:text-5xl text-4xl text-color-letra-nav pb-4 mb-4 border-b border-color-fondo-marron leading-none">
-                  {tarifa.segundoBono}
-                </h3>
-                <Link
-                  to="/reserva"
-                  className="flex items-center mt-auto text-color-letra-card bg-color-fondo-blanco border-0 py-1 px-2 sm:py-2 sm:px-4 w-full focus:outline-none hover:bg-color-letra-card hover:text-color-fondo-blanco rounded"
-                >
-                  <span className="sm:hidden">Reserva</span>
-                  <span className="hidden sm:inline">Reserva tu experiencia</span>
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
+
+              <p
+                className={`font-custom-font2 text-4xl sm:text-5xl leading-none ${
+                  isBono ? "text-color-letra-card" : "text-color-letra-nav"
+                }`}
+              >
+                {row.precio}
+              </p>
+            </li>
+          );
+        })}
+      </ul>
+
+      <div className="mt-6 flex justify-center sm:justify-end">
+        <Link
+          to="/reserva"
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-color-fondo-marron/45 px-5 py-2.5 text-lg text-color-letra-card transition-all duration-300 hover:bg-color-letra-card hover:text-color-fondo-blanco"
+        >
+          <span>Reservar este masaje</span>
+          <svg
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            className="h-4 w-4"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </Link>
       </div>
     </section>
   );
