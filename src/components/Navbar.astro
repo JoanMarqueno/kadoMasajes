@@ -77,8 +77,8 @@ const isActive = (href: string) => {
     </div>
   </div>
 
-  <div data-menu-overlay class="pointer-events-none fixed inset-0 z-[45] hidden bg-color-letra-nav/45 opacity-0 backdrop-blur-[2px] transition-opacity duration-200 lg:hidden"></div>
-  <div id="mobile-navigation-menu" data-menu-panel class="pointer-events-none invisible fixed inset-x-3 top-[86px] z-[46] translate-y-[-10px] overflow-hidden rounded-3xl border border-color-fondo-marron/25 bg-color-fondo-blanco/95 opacity-0 backdrop-blur-xl shadow-[0_24px_50px_rgba(34,26,18,0.24)] transition-all duration-300 lg:hidden">
+  <div data-menu-overlay hidden class="pointer-events-none fixed inset-0 z-[45] bg-color-letra-nav/45 opacity-0 backdrop-blur-[2px] transition-opacity duration-200 lg:hidden"></div>
+  <div id="mobile-navigation-menu" data-menu-panel hidden class="pointer-events-none invisible fixed inset-x-3 top-[86px] z-[46] translate-y-[-10px] overflow-hidden rounded-3xl border border-color-fondo-marron/25 bg-color-fondo-blanco/95 opacity-0 backdrop-blur-xl shadow-[0_24px_50px_rgba(34,26,18,0.24)] transition-all duration-300 lg:hidden">
     <div class="h-1 w-full bg-gradient-to-r from-color-fondo-marron/10 via-color-fondo-marron to-color-fondo-marron/10"></div>
     <div class="px-4 pb-4 pt-3">
       <p class="px-2 text-xs uppercase tracking-[0.28em] text-color-letra-card/80">Menú</p>
@@ -152,9 +152,11 @@ const isActive = (href: string) => {
     }
 
     syncButtonState(false);
+    panel.hidden = true;
+    overlay.hidden = true;
     panel.classList.add('invisible', 'pointer-events-none', 'opacity-0', 'translate-y-[-10px]');
     panel.classList.remove('opacity-100', 'translate-y-0');
-    overlay.classList.add('hidden', 'pointer-events-none', 'opacity-0');
+    overlay.classList.add('pointer-events-none', 'opacity-0');
     overlay.classList.remove('opacity-100');
     body.style.overflow = '';
   };
@@ -169,7 +171,9 @@ const isActive = (href: string) => {
     body.style.overflow = open ? 'hidden' : '';
 
     if (open) {
-      overlay.classList.remove('hidden', 'pointer-events-none');
+      panel.hidden = false;
+      overlay.hidden = false;
+      overlay.classList.remove('pointer-events-none');
       panel.classList.remove('invisible', 'pointer-events-none');
 
       requestAnimationFrame(() => {
