@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PriceTable from '../../components/PriceTable.astro';
+import TreatmentCard from '../../components/TreatmentCard.astro';
+import { treatments, getRelatedTreatments, getTreatmentFaq, getTreatmentServiceSchema } from '../../lib/treatments';
+import { absoluteUrl, createReservationLink, getBreadcrumbSchema, getFaqSchema } from '../../lib/site';
+
+export function getStaticPaths() {
+  return treatments.map((treatment) => ({
+    params: { slug: treatment.slug },
+    props: { treatment },
+  }));
+}
+
+const { treatment } = Astro.props;
+const related = getRelatedTreatments(treatment.slug);
+const faqItems = getTreatmentFaq(treatment);
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+  { name: 'Tratamientos', url: absoluteUrl('/') },
+  { name: treatment.titulo, url: absoluteUrl(`/tratamientos/${treatment.slug}`) },
+]);
+const faqSchema = getFaqSchema(faqItems);
+const serviceSchema = getTreatmentServiceSchema(treatment);
+---
+
+<BaseLayout
+  title={`${treatment.titulo} en Tarragona | Kadō Masajes`}
+  description={`${treatment.resumen} Reserva ${treatment.titulo.toLowerCase()} en Tarragona con Kadō Masajes y consulta duración, bonos y detalles del tratamiento.`}
+  image={treatment.src}
+  structuredData={[breadcrumbSchema, faqSchema, serviceSchema]}
+>
+  <article class="bg-color-fondo min-h-screen pb-16 pt-36">
+    <div class="container mx-auto px-4 sm:px-6">
+      <nav aria-label="Breadcrumb" class="mx-auto max-w-6xl pb-6 text-sm text-color-letra-nav/80">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="/" class="hover:text-color-letra-card">Inicio</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/" class="hover:text-color-letra-card">Tratamientos</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-color-letra-card">{treatment.titulo}</li>
+        </ol>
+      </nav>
+
+      <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-color-fondo-marron/20 bg-color-fondo-blanco/90 shadow-[0_18px_40px_rgba(50,38,24,0.08)] backdrop-blur-sm">
+        <div class="grid gap-0 lg:grid-cols-[1fr_1fr]">
+          <div class="relative min-h-[360px] lg:min-h-[640px]">
+            <img src={treatment.src} alt={treatment.titulo} class="absolute inset-0 h-full w-full object-cover" width="750" height="624" decoding="async" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+          </div>
+
+          <div class="p-8 sm:p-10 lg:p-12">
+            <div class="space-y-7">
+              <div>
+                {treatment.recomendado && (
+                  <p class="inline-flex items-center gap-2 rounded-full border border-color-fondo-marron/35 bg-color-fondo-marron/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-color-letra-card">
+                    <span class="h-1.5 w-1.5 rounded-full bg-color-letra-card"></span>
+                    Recomendación de Kadō Masajes
+                  </p>
+                )}
+                <h1 class="kado-display mt-4 text-4xl leading-tight text-color-letra-nav sm:text-5xl">{treatment.titulo}</h1>
+                <p class="mt-3 text-lg italic text-color-letra-nav/85 sm:text-xl">{treatment.subtitulo}</p>
+                <div class="mt-5 w-24 border-b-4 border-color-fondo-marron"></div>
+              </div>
+
+              <p class="text-lg leading-relaxed text-color-letra-nav">{treatment.resumen}</p>
+
+              <div class="space-y-4">
+                {treatment.paragraphs.map((paragraph) => (
+                  <p class="leading-relaxed text-color-letra-nav">{paragraph}</p>
+                ))}
+              </div>
+
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <a href={createReservationLink(treatment.titulo)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-color-letra-nav px-6 py-3.5 text-center text-lg text-color-fondo-blanco transition-all duration-300 hover:bg-color-letra-card">
+                  Reservar por WhatsApp
+                </a>
+                <a href="/tarifas" class="inline-flex items-center justify-center rounded-xl border border-color-fondo-marron/45 px-6 py-3.5 text-center text-lg text-color-letra-card transition-all duration-300 hover:bg-color-letra-card hover:text-color-fondo-blanco">
+                  Ver tarifas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="mx-auto mt-12 grid max-w-6xl gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <PriceTable treatment={treatment} />
+
+        <div class="kado-surface rounded-3xl px-6 py-7 sm:px-8 sm:py-8">
+          <h2 class="kado-display text-3xl text-color-letra-nav sm:text-4xl">Preguntas frecuentes</h2>
+          <div class="mt-6 space-y-4">
+            {faqItems.map((item) => (
+              <details class="rounded-2xl border border-color-fondo-marron/25 bg-color-fondo-blanco/70 px-4 py-3">
+                <summary class="cursor-pointer list-none text-lg font-medium text-color-letra-nav">{item.question}</summary>
+                <p class="mt-3 leading-relaxed text-color-letra-nav">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+          <div class="mt-6 rounded-2xl bg-color-fondo-marron/10 p-5">
+            <p class="text-sm uppercase tracking-[0.16em] text-color-letra-card">Dónde estamos</p>
+            <p class="mt-2 text-base leading-relaxed text-color-letra-nav">Kadō Masajes está en Av. Ramón y Cajal, 5 1-1, Tarragona. Puedes reservar por WhatsApp, teléfono o email.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto mt-14 max-w-6xl">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <h2 class="kado-display text-3xl text-color-letra-nav sm:text-4xl">Otros tratamientos</h2>
+            <p class="mt-2 text-color-letra-nav/85">Si este no es exactamente lo que buscas, compara otras técnicas disponibles.</p>
+          </div>
+          <a href="/" class="hidden text-sm font-semibold uppercase tracking-[0.16em] text-color-letra-card hover:text-color-letra-nav sm:inline-flex">Ver todos</a>
+        </div>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {related.map((item) => (
+            <TreatmentCard treatment={item} />
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>

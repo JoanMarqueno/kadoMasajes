@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
   theme: {
     extend: {
       fontFamily: {
@@ -20,12 +17,10 @@ export default {
         'color-fondo-marron': '#DCC6A0',
         'color-letra-blanca': '#FFFFFF',
       },
-      borderStyle: ['hover']
     },
   },
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [
-  ],
-}
+  plugins: [],
+};

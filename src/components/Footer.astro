@@ -1,0 +1,51 @@
+---
+import { business } from '../lib/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 px-4 pb-8 pt-10 md:px-10 lg:px-12">
+  <div class="mx-auto max-w-6xl rounded-3xl border border-color-fondo-marron/20 bg-color-fondo-blanco/80 px-6 py-8 shadow-[0_18px_40px_rgba(50,38,24,0.10)] backdrop-blur-sm md:px-10">
+    <div class="grid gap-10 text-center md:grid-cols-[1.15fr_1fr_0.9fr] md:gap-8 md:text-left">
+      <div>
+        <a href="/" class="inline-flex items-center justify-center md:justify-start">
+          <img alt="Logo de Kado Masajes" src="/k.webp" class="w-56 sm:w-64" width="1528" height="517" loading="lazy" />
+        </a>
+        <p class="mt-4 text-sm text-color-letra-footer/90 sm:text-base">
+          Un espacio dedicado al bienestar, la calma y el equilibrio.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-custom-font2 mb-4 text-3xl font-semibold text-color-letra-footer sm:text-4xl">Contacto</h2>
+        <div class="space-y-3 text-base sm:text-[1.05rem]">
+          <a href={business.phoneHref} class="block transition-colors text-color-letra-footer hover:text-color-letra-card">{business.phone}</a>
+          <a href={`mailto:${business.email}`} class="block transition-colors text-color-letra-footer hover:text-color-letra-card">{business.email}</a>
+          <a href={business.mapsApp} target="_blank" rel="noopener noreferrer" class="block transition-colors text-color-letra-footer hover:text-color-letra-card">
+            {business.streetAddress}, {business.addressLocality}
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-custom-font2 mb-4 text-3xl font-semibold text-color-letra-footer sm:text-4xl">Síguenos</h2>
+        <div class="flex items-center justify-center gap-3 md:justify-start">
+          <a href={business.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram de Kadō Masajes" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-color-fondo-marron/35 bg-color-fondo-blanco text-color-letra-footer shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:text-color-letra-card">
+            <svg viewBox="0 0 50 50" class="h-5 w-5" aria-hidden="true" fill="currentColor"><path d="M46.137 6.552c-.75-.636-1.928-.727-3.146-.238C41.708 6.828 6.728 21.832 5.304 22.445c-.259.09-2.521.934-2.288 2.814.208 1.695 2.026 2.397 2.248 2.478l8.893 3.045c.59 1.964 2.765 9.21 3.246 10.758.3.965.789 2.233 1.646 2.494.752.29 1.5.025 1.984-.355l5.437-5.043 8.777 6.845.209.125c.596.264 1.167.396 1.712.396.421 0 .825-.079 1.211-.237 1.315-.54 1.841-1.793 1.896-1.935l6.556-34.077c.377-1.82-.18-2.746-.718-3.201ZM22 32l-3 8-3-10 23-17L22 32Z"/></svg>
+          </a>
+          <a href={business.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kadō Masajes" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-color-fondo-marron/35 bg-color-fondo-blanco text-color-letra-footer shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:text-color-letra-card">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true" fill="currentColor"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.9 1.15a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5Z"/></svg>
+          </a>
+          <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de Kadō Masajes" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-color-fondo-marron/35 bg-color-fondo-blanco text-color-letra-footer shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:text-color-letra-card">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.66 15l-1.3 4.74 4.86-1.27A10 10 0 1 0 12 2Zm0 18.2a8.17 8.17 0 0 1-4.16-1.14l-.3-.18-2.88.75.77-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.49-6.13c-.24-.12-1.42-.7-1.64-.77-.22-.08-.38-.12-.54.12-.16.24-.62.77-.76.93-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.22-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.54-.43h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.58 4.12 3.62.58.25 1.03.4 1.38.5.58.18 1.1.15 1.52.09.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-3 border-t border-color-fondo-marron/20 pt-5 text-center md:flex-row md:items-center md:justify-between">
+      <p class="text-sm text-color-letra-footer/80">© {year} Kadō Masajes</p>
+      <a href="/avisolegal" class="text-sm transition-colors text-color-letra-footer hover:text-color-letra-card">Aviso Legal</a>
+    </div>
+  </div>
+</footer>

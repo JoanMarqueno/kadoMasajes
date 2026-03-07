@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TreatmentsLanding from '../components/TreatmentsLanding.astro';
+import { treatments, getTreatmentUrl } from '../lib/treatments';
+import { absoluteUrl, getBreadcrumbSchema } from '../lib/site';
+
+const itemListSchema = {
+  '@type': 'ItemList',
+  name: 'Tratamientos de Kadō Masajes',
+  itemListElement: treatments.map((treatment, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: treatment.titulo,
+    url: absoluteUrl(getTreatmentUrl(treatment.slug)),
+  })),
+};
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+]);
+---
+
+<BaseLayout
+  title="Masajes en Tarragona | Kadō Masajes"
+  description="Masajes terapéuticos, relajantes, deportivos y de tejido profundo en Tarragona. Descubre tratamientos personalizados y reserva tu cita en Kadō Masajes."
+  image="/portada3-1800.webp"
+  structuredData={[breadcrumbSchema, itemListSchema]}
+>
+  <TreatmentsLanding h1="Masajes en Tarragona | Kadō Masajes" />
+</BaseLayout>

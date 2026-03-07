@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kado-bg-main: #f6f3ee;
+  --kado-bg-soft: #fffdf9;
+  --kado-text: #5f5b58;
+  --kado-accent: #b39c6d;
+  --kado-accent-soft: #d8bd8f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ffffff 0%, #fbf9f4 45%, #f4eee1 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--kado-text);
+  font-family: 'Manrope', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 50;
+}
+
+.card-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.card-details .summary-open {
+  display: none;
+}
+
+.card-details[open] .summary-open {
+  display: inline;
+}
+
+.card-details[open] .summary-closed {
+  display: none;
+}
+
+@layer components {
+  .kado-display {
+    @apply font-custom-font2 tracking-[0.01em];
+  }
+
+  .kado-heading {
+    @apply font-custom-font font-semibold tracking-[0.01em];
+  }
+
+  .section-title {
+    @apply font-custom-font2 text-4xl text-color-letra-nav sm:text-5xl;
+  }
+
+  .section-subtitle {
+    @apply mx-auto max-w-2xl px-4 text-base italic text-color-letra-nav sm:text-lg;
+  }
+
+  .kado-surface {
+    @apply rounded-2xl border bg-color-fondo-blanco/95 backdrop-blur-sm ring-1 ring-white/60 shadow-[0_10px_28px_rgba(61,52,38,0.06)];
+    border-color: rgb(220 198 160 / 0.46);
+  }
+
+  .underline-effect span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #d8bd8f;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .underline-effect:hover span::after,
+  .underline-effect a[aria-current='page'] span::after {
+    transform: scaleX(1);
+  }
+}

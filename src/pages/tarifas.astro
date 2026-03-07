@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PriceTable from '../components/PriceTable.astro';
+import { treatments } from '../lib/treatments';
+import { absoluteUrl, getBreadcrumbSchema } from '../lib/site';
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+  { name: 'Tarifas', url: absoluteUrl('/tarifas') },
+]);
+---
+
+<BaseLayout
+  title="Tarifas de Masajes en Tarragona | Kadō Masajes"
+  description="Consulta precios y bonos de masajes en Tarragona: masaje relajante, deportivo, deep tissue, facial, reflexología y más."
+  image="/kado.webp"
+  structuredData={breadcrumbSchema}
+>
+  <section class="bg-color-fondo min-h-screen pb-16 pt-36">
+    <div class="container mx-auto px-4 sm:px-6">
+      <SectionHeading tag="h1" title="Tarifas" subtitle="Sesiones individuales y bonos de 3 sesiones para invertir en bienestar con una estructura clara y fácil de comparar." />
+      <div class="mx-auto max-w-7xl space-y-8">
+        {treatments.map((treatment) => (
+          <PriceTable treatment={treatment} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

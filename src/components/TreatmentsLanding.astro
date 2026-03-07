@@ -1,0 +1,39 @@
+---
+import Hero from './Hero.astro';
+import SectionHeading from './SectionHeading.astro';
+import TreatmentCard from './TreatmentCard.astro';
+import { treatments } from '../lib/treatments';
+
+interface Props {
+  h1: string;
+}
+
+const { h1 } = Astro.props;
+---
+
+<div class="bg-color-fondo min-h-screen">
+  <h1 class="sr-only">{h1}</h1>
+
+  <Hero
+    title="Kadō Masajes es un espacio único en pleno centro de Tarragona consagrado al bienestar y a la relajación."
+    lead="Descubre los tratamientos que pongo a tu disposición. Escucha a tu maestro interior para elegir el que mejor se adapte a ti."
+    accentText="Estás a un masaje de sentirte mejor…"
+    desktopImage="/portada3-1800.webp"
+    mobileImage="/portada3-960.webp"
+  />
+
+  <section class="pb-16 pt-20" aria-labelledby="tratamientos-title">
+    <div class="container mx-auto px-4 sm:px-6">
+      <SectionHeading
+        id="tratamientos-title"
+        title="Tratamientos"
+        subtitle="Descubre nuestros servicios personalizados"
+      />
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8">
+        {treatments.map((treatment) => (
+          <TreatmentCard treatment={treatment} />
+        ))}
+      </div>
+    </div>
+  </section>
+</div>

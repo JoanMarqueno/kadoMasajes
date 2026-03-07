@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import IconWhatsApp from '../components/IconWhatsApp.astro';
+import { business } from '../lib/site';
+import { absoluteUrl, getBreadcrumbSchema } from '../lib/site';
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+  { name: 'Reserva', url: absoluteUrl('/reserva') },
+]);
+---
+
+<BaseLayout
+  title="Reserva tu masaje en Tarragona | Kadō Masajes"
+  description="Reserva tu cita de masaje en Kadō Masajes. Contacta por WhatsApp, teléfono o email y encuentra nuestra ubicación en Tarragona."
+  image="/kado.webp"
+  structuredData={breadcrumbSchema}
+>
+  <section class="bg-color-fondo min-h-screen pb-16 pt-36">
+    <div class="container mx-auto px-4 sm:px-6">
+      <SectionHeading tag="h1" title="Reservas" subtitle="Tu bienestar, nuestra prioridad" />
+
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] border border-color-fondo-marron/20 bg-color-fondo-blanco/90 shadow-[0_18px_40px_rgba(50,38,24,0.08)] backdrop-blur-sm">
+        <div class="flex flex-col items-stretch lg:flex-row">
+          <div class="relative min-h-[400px] lg:min-h-[600px] lg:w-1/2">
+            <iframe
+              src={business.mapsEmbed}
+              class="absolute inset-0 h-full w-full"
+              style="border:0; filter: grayscale(1) contrast(1.2) opacity(0.8);"
+              loading="lazy"
+              title="Ubicación de Kadō Masajes"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+
+          <div class="flex flex-col justify-center p-8 sm:p-12 lg:w-1/2">
+            <div class="space-y-8">
+              <div class="space-y-6">
+                <p class="text-lg leading-relaxed text-color-letra-nav">
+                  Para reservar una cita, envíanos un correo o un mensaje de WhatsApp con tu nombre, el día, la hora y el tipo de masaje que deseas reservar.
+                </p>
+
+                <div class="rounded-xl border border-color-fondo-marron/10 bg-color-fondo-marron/5 p-6">
+                  <h2 class="kado-heading mb-4 text-xl text-color-letra-nav">Información de contacto</h2>
+                  <div class="space-y-4">
+                    <div class="flex items-start"><span class="mr-3 w-24 font-medium text-color-fondo-marron">Dirección:</span><a href={business.mapsApp} target="_blank" rel="noopener noreferrer" class="transition-colors text-color-letra-nav hover:text-color-letra-card">{business.streetAddress}, {business.addressLocality}</a></div>
+                    <div class="flex items-start"><span class="mr-3 w-24 font-medium text-color-fondo-marron">Email:</span><a href={`mailto:${business.email}`} class="transition-colors text-color-letra-nav hover:text-color-letra-card">{business.email}</a></div>
+                    <div class="flex items-start"><span class="mr-3 w-24 font-medium text-color-fondo-marron">Teléfono:</span><a href={business.phoneHref} class="transition-colors text-color-letra-nav hover:text-color-letra-card">{business.phone}</a></div>
+                  </div>
+                </div>
+
+                <div class="space-y-4">
+                  <p class="leading-relaxed text-color-letra-nav">Si tienes alguna duda sobre algún tratamiento, no dudes en ponerte en contacto con nosotros.</p>
+                  <p class="font-medium text-color-letra-nav">No se atenderán servicios sin cita previa.</p>
+                </div>
+
+                <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-color-fondo-marron px-6 py-3.5 text-color-fondo-blanco shadow-sm transition-all duration-300 hover:bg-color-letra-card hover:shadow-md sm:w-auto">
+                  <IconWhatsApp />
+                  <span>Solicitar cita</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
