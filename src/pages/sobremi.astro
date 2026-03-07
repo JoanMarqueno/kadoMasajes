@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { absoluteUrl, getBreadcrumbSchema } from '../lib/site';
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+  { name: 'Sobre mí', url: absoluteUrl('/sobremi') },
+]);
+---
+
+<BaseLayout
+  title="Sobre Kadō Masajes | Quiromasaje en Tarragona"
+  description="Conoce la formación y experiencia de Ángel Martín Sánchez, terapeuta especializado en quiromasaje y técnicas de relajación en Tarragona."
+  image="/sobremi.webp"
+  structuredData={breadcrumbSchema}
+>
+  <section class="bg-color-fondo min-h-screen pb-16 pt-36">
+    <div class="container mx-auto px-4 sm:px-6">
+      <SectionHeading tag="h1" title="Sobre mí" subtitle="Experiencia y profesionalidad a tu servicio" />
+
+      <div class="kado-container-border mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-color-fondo-blanco/90 shadow-[0_18px_40px_rgba(50,38,24,0.08)] backdrop-blur-sm">
+        <div class="flex flex-col lg:flex-row items-stretch">
+          <div class="lg:w-1/2">
+            <div class="relative h-full">
+              <img class="h-[380px] w-full object-cover object-top sm:h-[500px] lg:h-full lg:min-h-[600px]" alt="Ángel Martín Sánchez, terapeuta de Kadō Masajes" src="/sobremi.webp" width="2588" height="1742" decoding="async" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center p-8 sm:p-12 lg:w-1/2">
+            <div class="space-y-8">
+              <div>
+                <h2 class="kado-display mb-4 text-2xl font-medium text-color-letra-nav sm:text-3xl">Ángel Martín Sánchez</h2>
+                <div class="w-20 border-b-4 border-color-fondo-marron"></div>
+              </div>
+
+              <div class="space-y-6">
+                <div class="rounded-xl border border-color-fondo-marron/10 bg-color-fondo-marron/5 p-6">
+                  <h3 class="kado-heading mb-4 text-xl text-color-letra-nav">Formación</h3>
+                  <ul class="space-y-4 text-color-letra-nav">
+                    <li class="flex items-start"><span class="mr-3 text-color-fondo-marron">•</span><span>Titulado en Quiromasaje y Técnico en SPA y Relax por la Escuela Superior de Técnicas Parasanitarias de Salamanca.</span></li>
+                    <li class="flex items-start"><span class="mr-3 text-color-fondo-marron">•</span><span>Especializado en Masaje Californiano en la Escuela de Masaje Californiano de Barcelona.</span></li>
+                    <li class="flex items-start"><span class="mr-3 text-color-fondo-marron">•</span><span>Terapeuta Reiki niveles I y II.</span></li>
+                  </ul>
+                </div>
+
+                <div class="space-y-4">
+                  <p class="leading-relaxed text-color-letra-nav">
+                    Amplia experiencia como terapeuta en los SPAs de hoteles de Barcelona y Tarragona. Gracias a mi formación y experiencia he conseguido crear una terapia basada en una perspectiva holística del cuerpo, teniendo en cuenta nuestra parte física, energética y espiritual.
+                  </p>
+                  <p class="leading-relaxed text-color-letra-nav">
+                    De este modo, la experiencia se convierte en un verdadero momento de conexión con nuestro interior para sanar desde dentro hacia afuera.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

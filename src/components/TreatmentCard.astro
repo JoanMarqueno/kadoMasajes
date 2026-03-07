@@ -1,0 +1,188 @@
+---
+import type { Treatment } from '../lib/treatments';
+
+interface Props {
+  treatment: Treatment;
+}
+
+const { treatment } = Astro.props;
+const contentId = `descripcion-${treatment.slug}`;
+---
+
+<article
+  data-treatment-card
+  data-expanded="false"
+  class="kado-surface ring-0 relative flex h-full flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_35px_rgba(46,36,24,0.12)]"
+>
+  {treatment.recomendado && (
+    <div class="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full border border-color-fondo-marron/30 bg-color-fondo-blanco/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-color-letra-card shadow-[0_8px_20px_rgba(31,23,15,0.14)] backdrop-blur-sm">
+      <span class="h-1.5 w-1.5 rounded-full bg-color-letra-card"></span>
+      <span>Recomendado</span>
+    </div>
+  )}
+
+  <img
+    class="h-72 w-full object-cover object-center transition-transform duration-500 hover:scale-[1.03]"
+    src={treatment.src}
+    alt={treatment.titulo}
+    width="750"
+    height="624"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="flex h-full flex-col justify-between p-4 sm:p-5">
+    <div>
+      <div class="flex items-start justify-between gap-3 pb-4">
+        <h2 class="font-custom-font2 text-4xl leading-tight text-color-letra-nav">
+          {treatment.titulo}
+        </h2>
+
+        <button
+          type="button"
+          aria-controls={contentId}
+          aria-expanded="false"
+          data-card-toggle
+          class="mt-1 shrink-0 text-color-fondo-marron transition-colors hover:text-color-letra-card"
+        >
+          <svg
+            data-icon-plus
+            viewBox="0 0 24 24"
+            class="h-7 w-7"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14" />
+          </svg>
+          <svg
+            data-icon-minus
+            viewBox="0 0 24 24"
+            class="hidden h-7 w-7"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="h-[3px] w-full rounded-full bg-color-fondo-marron/80"></div>
+
+      <div class="py-4">
+        <div id={contentId} data-card-expanded class="hidden max-h-44 overflow-y-auto pr-1">
+          <p class="whitespace-pre-line font-medium leading-relaxed text-color-letra-nav">
+            {treatment.descripcion}
+          </p>
+        </div>
+
+        <p
+          data-card-summary
+          class="min-h-[7.5rem] font-medium leading-relaxed text-color-letra-nav"
+        >
+          {treatment.resumen}
+        </p>
+
+        <button
+          type="button"
+          aria-controls={contentId}
+          aria-expanded="false"
+          data-card-toggle
+          class="mt-2 inline-flex text-color-letra-card transition-colors hover:text-color-letra-nav"
+        >
+          <span data-card-toggle-label>Leer más</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pt-2">
+      <a
+        href="/reserva"
+        class="inline-flex select-none items-center gap-2 rounded-xl border border-color-fondo-marron/50 px-4 py-3 text-center align-middle text-xl text-color-letra-card transition-all hover:border-color-letra-card hover:bg-color-letra-card hover:text-color-fondo-blanco sm:text-2xl"
+      >
+        Reserva tu experiencia
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          aria-hidden="true"
+          class="h-4 w-4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<script is:inline>
+  if (!window.__kadoTreatmentCardsInit) {
+    window.__kadoTreatmentCardsInit = true;
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+
+      if (!(target instanceof Element)) {
+        return;
+      }
+
+      const toggle = target.closest('[data-card-toggle]');
+
+      if (!(toggle instanceof HTMLButtonElement)) {
+        return;
+      }
+
+      const card = toggle.closest('[data-treatment-card]');
+
+      if (!(card instanceof HTMLElement)) {
+        return;
+      }
+
+      const isExpanded = card.dataset.expanded === 'true';
+      const nextState = !isExpanded;
+      card.dataset.expanded = String(nextState);
+
+      const summary = card.querySelector('[data-card-summary]');
+      const expanded = card.querySelector('[data-card-expanded]');
+
+      if (summary instanceof HTMLElement) {
+        summary.classList.toggle('hidden', nextState);
+      }
+
+      if (expanded instanceof HTMLElement) {
+        expanded.classList.toggle('hidden', !nextState);
+      }
+
+      card.querySelectorAll('[data-card-toggle]').forEach((button) => {
+        if (button instanceof HTMLButtonElement) {
+          button.setAttribute('aria-expanded', String(nextState));
+        }
+      });
+
+      card.querySelectorAll('[data-icon-plus]').forEach((icon) => {
+        if (icon instanceof SVGElement) {
+          icon.classList.toggle('hidden', nextState);
+        }
+      });
+
+      card.querySelectorAll('[data-icon-minus]').forEach((icon) => {
+        if (icon instanceof SVGElement) {
+          icon.classList.toggle('hidden', !nextState);
+        }
+      });
+
+      card.querySelectorAll('[data-card-toggle-label]').forEach((label) => {
+        label.textContent = nextState ? 'Leer menos' : 'Leer más';
+      });
+    });
+  }
+</script>

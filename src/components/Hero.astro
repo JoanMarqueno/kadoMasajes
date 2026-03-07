@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  lead: string;
+  accentText: string;
+  desktopImage: string;
+  mobileImage?: string;
+}
+
+const { title, lead, accentText, desktopImage, mobileImage = desktopImage } = Astro.props;
+---
+
+<section class="relative h-[28rem] w-full overflow-hidden sm:h-[34rem]">
+  <img
+    src={desktopImage}
+    alt="Imagen de la sala con una camilla y unas flores"
+    class="absolute inset-0 h-[28rem] w-full object-cover sm:h-[34rem] z-0 scale-[1.02]"
+    srcset={`${mobileImage} 960w, ${desktopImage} 1800w`}
+    sizes="100vw"
+    width="3024"
+    height="3483"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="absolute inset-0 bg-gradient-to-tr from-color-letra-nav via-color-letra-nav/80 to-color-letra-card opacity-70"></div>
+
+  <div class="relative mx-auto flex h-full max-w-2xl items-center justify-center px-4 text-center lg:max-w-4xl">
+    <figure class="mt-20 text-center sm:mt-36">
+      <blockquote class="mx-auto overflow-hidden text-lg leading-8 text-color-letra-blanca sm:text-3xl sm:leading-[1.45] [text-shadow:0_2px_14px_rgba(0,0,0,0.22)]">
+        <p>{title}</p>
+        <br />
+        <p>{lead}</p>
+        <br />
+        <p class="italic text-xl sm:text-2xl">{accentText}</p>
+      </blockquote>
+    </figure>
+  </div>
+</section>

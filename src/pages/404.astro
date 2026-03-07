@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada | Kadō Masajes"
+  description="La página solicitada no existe. Vuelve a la página principal de Kadō Masajes."
+  robots="noindex,follow"
+>
+  <section class="flex min-h-screen items-center bg-color-fondo pt-28">
+    <div class="container mx-auto flex flex-col items-center justify-center px-5 text-center text-color-letra-nav">
+      <div class="max-w-xl">
+        <h1 class="kado-display pb-5 text-6xl">404</h1>
+        <p class="pb-5 text-xl leading-relaxed md:text-2xl">Lo siento, no podemos encontrar la página que estás buscando.</p>
+        <a href="/" class="inline-flex select-none items-center gap-2 rounded-lg px-3 py-3 text-2xl text-color-letra-card transition-all hover:bg-color-letra-card hover:text-color-fondo-blanco">
+          Volver a inicio
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" class="h-4 w-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

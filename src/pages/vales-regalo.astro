@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import IconWhatsApp from '../components/IconWhatsApp.astro';
+import { business } from '../lib/site';
+import { absoluteUrl, getBreadcrumbSchema } from '../lib/site';
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: 'Inicio', url: absoluteUrl('/') },
+  { name: 'Vales Regalo', url: absoluteUrl('/vales-regalo') },
+]);
+---
+
+<BaseLayout
+  title="Vales Regalo de Masajes | Kadō Masajes Tarragona"
+  description="Regala bienestar con vales personalizables de Kadō Masajes. Solicítalos por WhatsApp y recíbelos en formato digital."
+  image="/vale-regalo-ejemplo-optimized.webp"
+  structuredData={breadcrumbSchema}
+>
+  <section class="bg-color-fondo min-h-screen pb-16 pt-36">
+    <div class="container mx-auto px-4 sm:px-6">
+      <SectionHeading tag="h1" title="Vales Regalo" subtitle="El mejor regalo para cuidar a las personas que quieres" />
+
+      <div class="kado-container-border mx-auto max-w-4xl overflow-hidden rounded-[2rem] bg-color-fondo-blanco/90 shadow-[0_18px_40px_rgba(50,38,24,0.08)] backdrop-blur-sm">
+        <div class="flex flex-col lg:flex-row">
+          <div class="flex items-center justify-center bg-color-fondo-marron/5 p-8 sm:p-10 lg:w-1/2">
+            <img src="/vale-regalo-ejemplo-optimized.webp" alt="Ejemplo de vale regalo de Kadō Masajes" class="w-full max-w-sm rounded-lg shadow-md" width="750" height="605" decoding="async" />
+          </div>
+
+          <div class="p-8 sm:p-10 lg:w-1/2 lg:pl-8">
+            <div class="space-y-8">
+              <p class="text-base leading-relaxed text-color-letra-nav sm:text-lg">
+                Si quieres regalar un masaje tienes a tu disposición vales personalizables con el texto y la duración que desees.
+                Es una opción cómoda, elegante y rápida para regalar bienestar de una forma muy personal.
+              </p>
+
+              <div class="rounded-xl border border-color-fondo-marron/10 bg-color-fondo-marron/5 p-6">
+                <h2 class="kado-heading mb-4 text-lg text-color-letra-nav sm:text-xl">Información importante</h2>
+                <ul class="space-y-4 text-color-letra-nav">
+                  <li class="flex items-start gap-2"><span>•</span><span>Se envía en formato digital por WhatsApp; no es necesario imprimirlo.</span></li>
+                  <li class="flex items-start gap-2"><span>•</span><span>Caduca en 6 meses.</span></li>
+                  <li class="flex items-start gap-2"><span>•</span><span>El pago puede realizarse por Bizum una vez recibido el vale ya personalizado.</span></li>
+                </ul>
+              </div>
+
+              <div class="space-y-4 pt-2">
+                <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-color-fondo-marron px-6 py-3.5 text-color-fondo-blanco shadow-sm transition-all duration-300 hover:bg-color-letra-card hover:shadow-md sm:w-auto">
+                  <IconWhatsApp />
+                  <span>Solicitar vale regalo</span>
+                </a>
+                <p class="text-center text-sm text-color-letra-nav/80">
+                  Para comprar tu vale regalo o solicitar más información, envía un mensaje por WhatsApp al <span class="font-medium">623 51 98 32</span>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

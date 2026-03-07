@@ -1,0 +1,86 @@
+---
+import '@fontsource/manrope/latin-400.css';
+import '@fontsource/manrope/latin-500.css';
+import '@fontsource/manrope/latin-600.css';
+import '@fontsource/manrope/latin-700.css';
+import '@fontsource/cormorant/latin-400.css';
+import '@fontsource/cormorant/latin-500.css';
+import '@fontsource/cormorant/latin-600.css';
+import '@fontsource/cormorant/latin-700.css';
+import '../styles/global.css';
+
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import { absoluteUrl, siteConfig, getBusinessSchema, getWebsiteSchema, type SchemaObject } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  robots?: string;
+  type?: 'website' | 'article';
+  canonicalPath?: string;
+  structuredData?: SchemaObject | SchemaObject[];
+}
+
+const {
+  title = siteConfig.defaultTitle,
+  description = siteConfig.defaultDescription,
+  image = siteConfig.defaultImage,
+  robots = 'index,follow',
+  type = 'website',
+  canonicalPath,
+  structuredData = [],
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const canonical = canonicalPath
+  ? (canonicalPath.startsWith('http') ? canonicalPath : absoluteUrl(canonicalPath))
+  : absoluteUrl(`${Astro.url.pathname}${Astro.url.search}`);
+const imageUrl = image.startsWith('http') ? image : absoluteUrl(image);
+const schemaGraph = [getWebsiteSchema(), getBusinessSchema()].concat(
+  Array.isArray(structuredData) ? structuredData : [structuredData],
+).filter(Boolean);
+const schemaJson = schemaGraph.length
+  ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schemaGraph })
+  : null;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="theme-color" content="#f5f0e8" />
+    <link rel="icon" type="image/png" href="/kado.png" />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    {schemaJson && <script is:inline type="application/ld+json" set:html={schemaJson} />}
+  </head>
+  <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-color-fondo-blanco focus:px-4 focus:py-2 focus:text-color-letra-nav focus:shadow">
+      Saltar al contenido principal
+    </a>
+    <Navbar currentPath={currentPath} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

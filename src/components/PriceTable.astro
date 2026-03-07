@@ -1,0 +1,62 @@
+---
+import type { Treatment } from '../lib/treatments';
+import { createReservationLink } from '../lib/site';
+
+interface Props {
+  treatment: Treatment;
+  compact?: boolean;
+}
+
+const { treatment, compact = false } = Astro.props;
+const rows = treatment.priceRows;
+---
+
+<section class:list={[
+  'kado-surface rounded-3xl px-5 py-6 sm:px-8 sm:py-8',
+  compact && 'h-full',
+]}>
+  <header class="mb-5 text-center sm:text-left">
+    <h2 class="font-custom-font2 text-4xl leading-tight text-color-letra-footer sm:text-5xl">{treatment.titulo}</h2>
+  </header>
+
+  <ul class="space-y-2">
+    {rows.map((row, index) => {
+      const isBono = row.type === 'bono';
+      const isLast = index === rows.length - 1;
+
+      return (
+        <li class:list={[
+          'flex items-end justify-between gap-4 py-4',
+          isBono
+            ? 'rounded-2xl border border-color-fondo-marron/35 bg-gradient-to-r from-color-fondo-marron/20 to-color-fondo-marron/10 px-3 sm:px-4'
+            : !isLast && 'border-b border-color-fondo-marron/25',
+        ]}>
+          <div class="min-w-0">
+            {isBono ? (
+              <p class="inline-flex items-center rounded-full border border-color-fondo-marron/45 bg-color-fondo-blanco/70 px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-color-letra-card">
+                Bono 3 sesiones
+              </p>
+            ) : (
+              <p class="text-[0.7rem] uppercase tracking-[0.2em] text-color-letra-footer/70">Sesión</p>
+            )}
+            <p class="mt-1 text-lg text-color-letra-nav sm:text-xl">{row.duration}</p>
+          </div>
+
+          <p class:list={[
+            'font-custom-font2 text-4xl leading-none sm:text-5xl',
+            isBono ? 'text-color-letra-card' : 'text-color-letra-nav',
+          ]}>
+            {row.price}
+          </p>
+        </li>
+      );
+    })}
+  </ul>
+
+  <div class="mt-6 flex justify-center sm:justify-end">
+    <a href={createReservationLink(treatment.titulo)} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-xl border border-color-fondo-marron/45 px-5 py-2.5 text-lg text-color-letra-card transition-all duration-300 hover:bg-color-letra-card hover:text-color-fondo-blanco">
+      <span>Reservar este masaje</span>
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+    </a>
+  </div>
+</section>
