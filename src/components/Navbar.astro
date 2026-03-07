@@ -121,34 +121,37 @@ const isActive = (href: string) => {
   const panel = document.querySelector('[data-menu-panel]');
   const overlay = document.querySelector('[data-menu-overlay]');
   const body = document.body;
+  const MENU_CLOSE_DURATION = 240;
+  let closeTimer: number | undefined;
+  let navigationTimer: number | undefined;
 
-  const setOpen = (open: boolean) => {
-    if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement) || !(overlay instanceof HTMLElement)) {
+  const clearTimers = () => {
+    if (typeof closeTimer === 'number') {
+      window.clearTimeout(closeTimer);
+      closeTimer = undefined;
+    }
+
+    if (typeof navigationTimer === 'number') {
+      window.clearTimeout(navigationTimer);
+      navigationTimer = undefined;
+    }
+  };
+
+  const syncButtonState = (open: boolean) => {
+    if (!(button instanceof HTMLButtonElement)) {
       return;
     }
 
     button.setAttribute('aria-expanded', String(open));
     button.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
-    panel.classList.toggle('invisible', !open);
-    panel.classList.toggle('pointer-events-none', !open);
-    panel.classList.toggle('opacity-0', !open);
-    panel.classList.toggle('translate-y-[-10px]', !open);
-    panel.classList.toggle('opacity-100', open);
-    panel.classList.toggle('translate-y-0', open);
-    overlay.classList.toggle('hidden', !open);
-    overlay.classList.toggle('pointer-events-none', !open);
-    overlay.classList.toggle('opacity-0', !open);
-    overlay.classList.toggle('opacity-100', open);
-    body.style.overflow = open ? 'hidden' : '';
   };
 
-  const closeImmediately = () => {
-    if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement) || !(overlay instanceof HTMLElement)) {
+  const finishClosedState = () => {
+    if (!(panel instanceof HTMLElement) || !(overlay instanceof HTMLElement)) {
       return;
     }
 
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-label', 'Abrir menú');
+    syncButtonState(false);
     panel.classList.add('invisible', 'pointer-events-none', 'opacity-0', 'translate-y-[-10px]');
     panel.classList.remove('opacity-100', 'translate-y-0');
     overlay.classList.add('hidden', 'pointer-events-none', 'opacity-0');
@@ -156,14 +159,98 @@ const isActive = (href: string) => {
     body.style.overflow = '';
   };
 
+  const setOpen = (open: boolean) => {
+    if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement) || !(overlay instanceof HTMLElement)) {
+      return;
+    }
+
+    clearTimers();
+    syncButtonState(open);
+    body.style.overflow = open ? 'hidden' : '';
+
+    if (open) {
+      overlay.classList.remove('hidden', 'pointer-events-none');
+      panel.classList.remove('invisible', 'pointer-events-none');
+
+      requestAnimationFrame(() => {
+        if (button.getAttribute('aria-expanded') !== 'true') {
+          return;
+        }
+
+        overlay.classList.remove('opacity-0');
+        overlay.classList.add('opacity-100');
+        panel.classList.remove('opacity-0', 'translate-y-[-10px]');
+        panel.classList.add('opacity-100', 'translate-y-0');
+      });
+
+      return;
+    }
+
+    overlay.classList.add('pointer-events-none');
+    panel.classList.add('pointer-events-none');
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    panel.classList.remove('opacity-100', 'translate-y-0');
+    panel.classList.add('opacity-0', 'translate-y-[-10px]');
+
+    closeTimer = window.setTimeout(() => {
+      finishClosedState();
+    }, MENU_CLOSE_DURATION);
+  };
+
+  const closeImmediately = () => {
+    clearTimers();
+    finishClosedState();
+  };
+
   button?.addEventListener('click', () => {
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
-    setOpen(!isOpen);
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    setOpen(button.getAttribute('aria-expanded') !== 'true');
   });
 
   overlay?.addEventListener('click', () => setOpen(false));
   panel?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => closeImmediately());
+    if (!(link instanceof HTMLAnchorElement)) {
+      return;
+    }
+
+    link.addEventListener('click', (event) => {
+      const isModifiedClick = event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+      const isSameOrigin = link.origin === window.location.origin;
+      const shouldDelayNavigation =
+        !isModifiedClick &&
+        !event.defaultPrevented &&
+        isSameOrigin &&
+        (!link.target || link.target === '_self') &&
+        !link.hasAttribute('download');
+
+      if (!shouldDelayNavigation) {
+        closeImmediately();
+        return;
+      }
+
+      event.preventDefault();
+
+      const targetUrl = new URL(link.href, window.location.href);
+      const currentUrl = new URL(window.location.href);
+      const isSamePage =
+        targetUrl.pathname === currentUrl.pathname &&
+        targetUrl.search === currentUrl.search &&
+        targetUrl.hash === currentUrl.hash;
+
+      setOpen(false);
+
+      if (isSamePage) {
+        return;
+      }
+
+      navigationTimer = window.setTimeout(() => {
+        window.location.assign(targetUrl.href);
+      }, MENU_CLOSE_DURATION);
+    });
   });
 
   window.addEventListener('keydown', (event) => {
@@ -171,4 +258,6 @@ const isActive = (href: string) => {
       setOpen(false);
     }
   });
+
+  closeImmediately();
 </script>
