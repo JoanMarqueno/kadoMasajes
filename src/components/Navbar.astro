@@ -56,7 +56,7 @@ const isActive = (href: string) => {
         <img src="/k.webp" class="w-36 transition-opacity duration-300 lg:w-44" alt="Logo de Kado Masajes" width="1528" height="517" />
       </a>
 
-      <button type="button" data-menu-toggle aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-navigation-menu" class="group relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-color-fondo-marron/35 bg-color-fondo-blanco/90 text-color-letra-nav shadow-[0_8px_18px_rgba(51,39,24,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_20px_rgba(51,39,24,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-color-fondo-marron/60 lg:hidden">
+      <button type="button" data-menu-toggle aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-navigation-menu" class="group relative inline-flex h-11 w-11 items-center justify-center rounded-xl border border-color-fondo-marron/35 bg-color-fondo-blanco/90 text-color-letra-nav shadow-[0_8px_18px_rgba(51,39,24,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_20px_rgba(51,39,24,0.14)] focus:outline-none focus-visible:ring-2 focus-visible:ring-color-fondo-marron/60 lg:hidden" style="-webkit-tap-highlight-color: transparent;">
         <span aria-hidden="true" class="absolute h-[2px] w-5 -translate-y-[6px] rounded-full bg-current transition-all duration-300"></span>
         <span aria-hidden="true" class="absolute h-[2px] w-5 rounded-full bg-current transition-all duration-200"></span>
         <span aria-hidden="true" class="absolute h-[2px] w-5 translate-y-[6px] rounded-full bg-current transition-all duration-300"></span>
@@ -86,11 +86,11 @@ const isActive = (href: string) => {
         {navigation.map((item) => (
           <li>
             <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} class:list={[
-              'group flex items-center justify-between rounded-2xl px-4 py-3 text-lg transition-all duration-200',
+              'group flex items-center justify-between rounded-2xl px-4 py-3 text-lg transition-colors duration-200',
               isActive(item.href)
                 ? 'bg-color-fondo-marron/25 text-color-letra-card'
                 : 'text-color-letra-nav hover:bg-color-fondo-marron/10 hover:text-color-letra-card',
-            ]}>
+            ]} style="-webkit-tap-highlight-color: transparent;">
               <span class="tracking-wide">{item.name}</span>
               <span class="h-2 w-2 rounded-full bg-color-fondo-marron/70 transition-transform duration-200 group-hover:scale-125"></span>
             </a>
@@ -142,6 +142,20 @@ const isActive = (href: string) => {
     body.style.overflow = open ? 'hidden' : '';
   };
 
+  const closeImmediately = () => {
+    if (!(button instanceof HTMLButtonElement) || !(panel instanceof HTMLElement) || !(overlay instanceof HTMLElement)) {
+      return;
+    }
+
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', 'Abrir menú');
+    panel.classList.add('invisible', 'pointer-events-none', 'opacity-0', 'translate-y-[-10px]');
+    panel.classList.remove('opacity-100', 'translate-y-0');
+    overlay.classList.add('hidden', 'pointer-events-none', 'opacity-0');
+    overlay.classList.remove('opacity-100');
+    body.style.overflow = '';
+  };
+
   button?.addEventListener('click', () => {
     const isOpen = button.getAttribute('aria-expanded') === 'true';
     setOpen(!isOpen);
@@ -149,7 +163,7 @@ const isActive = (href: string) => {
 
   overlay?.addEventListener('click', () => setOpen(false));
   panel?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setOpen(false));
+    link.addEventListener('click', () => closeImmediately());
   });
 
   window.addEventListener('keydown', (event) => {
