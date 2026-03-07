@@ -80,6 +80,12 @@ main {
     border-color: rgb(220 198 160 / 0.46);
   }
 
+  /* Mismo borde dorado/beige que .kado-surface para el contenedor principal de cada página */
+  .kado-container-border {
+    border: 1px solid rgb(220 198 160 / 0.46);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.6);
+  }
+
   .underline-effect span::after {
     content: '';
     position: absolute;
@@ -97,4 +103,5 @@ main {
   .underline-effect a[aria-current='page'] span::after {
     transform: scaleX(1);
   }
+
 }
