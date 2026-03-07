@@ -123,17 +123,11 @@ const isActive = (href: string) => {
   const body = document.body;
   const MENU_CLOSE_DURATION = 240;
   let closeTimer: number | undefined;
-  let navigationTimer: number | undefined;
 
   const clearTimers = () => {
     if (typeof closeTimer === 'number') {
       window.clearTimeout(closeTimer);
       closeTimer = undefined;
-    }
-
-    if (typeof navigationTimer === 'number') {
-      window.clearTimeout(navigationTimer);
-      navigationTimer = undefined;
     }
   };
 
@@ -221,40 +215,7 @@ const isActive = (href: string) => {
       return;
     }
 
-    link.addEventListener('click', (event) => {
-      const isModifiedClick = event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
-      const isSameOrigin = link.origin === window.location.origin;
-      const shouldDelayNavigation =
-        !isModifiedClick &&
-        !event.defaultPrevented &&
-        isSameOrigin &&
-        (!link.target || link.target === '_self') &&
-        !link.hasAttribute('download');
-
-      if (!shouldDelayNavigation) {
-        closeImmediately();
-        return;
-      }
-
-      event.preventDefault();
-
-      const targetUrl = new URL(link.href, window.location.href);
-      const currentUrl = new URL(window.location.href);
-      const isSamePage =
-        targetUrl.pathname === currentUrl.pathname &&
-        targetUrl.search === currentUrl.search &&
-        targetUrl.hash === currentUrl.hash;
-
-      setOpen(false);
-
-      if (isSamePage) {
-        return;
-      }
-
-      navigationTimer = window.setTimeout(() => {
-        window.location.assign(targetUrl.href);
-      }, MENU_CLOSE_DURATION);
-    });
+    link.addEventListener('click', () => closeImmediately());
   });
 
   window.addEventListener('keydown', (event) => {
