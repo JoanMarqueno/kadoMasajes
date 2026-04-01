@@ -4,5 +4,5 @@
     "baseUrl": ".",
     "resolveJsonModule": true
   },
-  "exclude": ["dist", "legacy-src"]
+  "exclude": ["dist"]
 }
