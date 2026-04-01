@@ -2,38 +2,38 @@
     {
       "nombre": "Masaje Californiano",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "40€",
+      "precioPrimerTiempo": "45€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "60€",
-      "primerBono": "110€",
-      "segundoBono": "170€"
+      "precioSegundoTiempo": "65€",
+      "primerBono": "125€",
+      "segundoBono": "185€"
     },
     {
       "nombre": "Masaje Relajante",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "40€",
+      "precioPrimerTiempo": "45€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "60€",
-      "primerBono": "110€",
-      "segundoBono": "170€"
+      "precioSegundoTiempo": "65€",
+      "primerBono": "125€",
+      "segundoBono": "185€"
     },
     {
       "nombre": "Masaje Deportivo",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "40€",
+      "precioPrimerTiempo": "45€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "60€",
-      "primerBono": "110€",
-      "segundoBono": "170€"
+      "precioSegundoTiempo": "65€",
+      "primerBono": "125€",
+      "segundoBono": "185€"
     },
     {
       "nombre": "Masaje Deep Tissue",
       "primerTiempo": "60min",
-      "precioPrimerTiempo": "40€",
+      "precioPrimerTiempo": "45€",
       "segundoTiempo": "90min",
-      "precioSegundoTiempo": "60€",
-      "primerBono": "110€",
-      "segundoBono": "170€"
+      "precioSegundoTiempo": "65€",
+      "primerBono": "125€",
+      "segundoBono": "185€"
     },
 
     {
@@ -41,18 +41,18 @@
       "primerTiempo": null,
       "precioPrimerTiempo":null,
       "segundoTiempo": "45min",
-      "precioSegundoTiempo": "30€",
+      "precioSegundoTiempo": "35€",
       "primerBono": null,
-      "segundoBono": "80€"
+      "segundoBono": "95€"
     },
     {
       "nombre": "Reflexología Podal",
       "primerTiempo": null,
       "precioPrimerTiempo":null,
       "segundoTiempo": "45min",
-      "precioSegundoTiempo": "30€",
+      "precioSegundoTiempo": "35€",
       "primerBono": null,
-      "segundoBono": "80€"
+      "segundoBono": "95€"
     }
   ]
   
