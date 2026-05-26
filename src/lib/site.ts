@@ -19,7 +19,7 @@ export const business = {
   mapsApp: 'https://maps.app.goo.gl/GnHFHcMNXit1jtJ26',
   mapsEmbed:
     'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6011.602730202711!2d1.248432!3d41.117029!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1bd8e5946ab7ed%3A0x6c5568c1e3a6f56b!2sKad%C5%8D%20Masajes%20Massage%20Massatge%20Massaggio%20Masaje%20Californiano!5e0!3m2!1sca!2ses!4v1701367404667!5m2!1sca!2ses',
-  streetAddress: 'Av. Ramón y Cajal, 5 1-1',
+  streetAddress: 'Av. Ramón y Cajal 5, 1-1',
   addressLocality: 'Tarragona',
   addressRegion: 'Tarragona',
   postalCode: '43001',
